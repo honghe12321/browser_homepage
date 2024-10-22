@@ -1,0 +1,18 @@
+.clock {
+    margin: auto;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bold;
+    color: rgba(67, 241, 219, 0.7);
+}
+.timeBox{
+    padding: 0 0 7px 0;
+    position: relative;
+    width: 19%;
+    margin: auto;
+    top: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    border-radius: 25px;
+}
