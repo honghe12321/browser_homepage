@@ -14,11 +14,13 @@ const Clock = () => {
         };
     }, []);
     return (
+
         <div className="timeBox">
             <div className="clock" id="clock">
                 {time}
             </div>
         </div>
+
     )
 }
 
