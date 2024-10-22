@@ -1,19 +1,23 @@
 import {useState} from "react";
 import "../css/favorites.css"
 
+// 从localStorage获取配置信息
+const favorites = JSON.parse(localStorage.getItem('favorites'));
+
 const Favorites = ()=>{
-    const favorites = {
-        name:"哔哩哔哩",href:"www.bilibili.com",id:0
-    }
-    // id后续添加
-    favorites.id=0
-    const [favoritesList,setFavoritesList]=useState([favorites])
+
+    const [favoritesList,setFavoritesList]=useState(favorites? favorites:[])
+    // 保存配置信息到localStorage
+    localStorage.setItem('favorites', JSON.stringify(favoritesList));
     const addItem = (item) => {
-        item.id=favoritesList.length + 1
+        item.id=crypto.randomUUID()
         setFavoritesList(() =>[...favoritesList, item ])
+
     }
-    const removeItem = (id) => {
+    const removeItem = (e,id) => {
+        e.stopPropagation();
         setFavoritesList(prevItems => prevItems.filter(item => item.id !== id));
+
     }
     const userClickAdd = ()=>{
         setIsShowAdd(true)
@@ -36,8 +40,6 @@ const Favorites = ()=>{
     };
     //点击确定
     const handleConfirm = () => {
-        console.log('Website:', website);
-        console.log('Name:', name);
         if (website!=="" && website !== null){
             addItem({name: name,href: website})
         }else alert("添加失败:网址为空！")
@@ -49,21 +51,15 @@ const Favorites = ()=>{
         setIsShowAdd(false);
     };
 
-    // if (favoritesList.length<10){
-    //     addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
-    // }
-    // console.log(favoritesList)
 
     return (
         <div className='box'>
                 {favoritesList.map(item=>
                     (
                         <div className={'list'} key={item.id} onClick={()=>linkTo(item.href)}>
-
-                                <div className='del' onClick={() => removeItem(item.id)}><span>×</span></div>
-                                <img src={`https://${item.href}/favicon.ico`} alt="图标呢？"/>
-                                <span>{item.name}</span>
-
+                            <div className='del' onClick={(e) => removeItem(e,item.id)}><span>×</span></div>
+                            <img src={`https://${item.href}/favicon.ico`} alt="图标呢？"/>
+                            <span>{item.name}</span>
                         </div>
                     ))
                 }
