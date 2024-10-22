@@ -1,7 +1,7 @@
 .input-container {
     margin: 0 auto 0 auto;
     position: relative;
-    width: 26rem;
+    width: 21rem;
     height: 3.2rem;
     border-radius: 3rem;
     background-color: rgba(255, 255, 255, 0.2);
@@ -42,3 +42,11 @@
     background-color: #1180f5;
     color: #000000;
 }
+
+@media (min-width: 640px) { /* 小型设备及以上 */
+    .input-container {
+        width: 26rem;
+    }
+
+}
+

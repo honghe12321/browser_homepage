@@ -1,8 +1,10 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-image: url('../image/2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover; /* 背景图覆盖整个区域 */
+    background-position: center; /* 背景图居中 */
+    background-repeat: no-repeat; /* 不重复背景图 */
+    min-height: 100vh; /* 确保背景图至少填满视口高度 */
 }
+

@@ -1,6 +1,6 @@
 .box{
     margin: 30px auto auto;
-    width: 30rem;
+    width: 24rem;
     height: 10rem;
     /*background: rgba(0, 0, 0, 0.13);*/
     /*backdrop-filter: blur(20px);*/
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 5.4rem;
+    width: 6rem;
     aspect-ratio: 1/1;
     margin: 2rem 1rem 1rem 1rem;
     list-style: none;
@@ -40,7 +40,7 @@
 }
 
 .list img{
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem 0 0.7rem 0;
     width: 40%;
 }
 .list span{
@@ -87,6 +87,39 @@
 
 
 @media (min-width: 640px) { /* 小型设备及以上 */
+    .box{
+        width: 40rem;
+        height: 10rem;
+    }
+    .list {
+
+        width: 8rem;
+    }
+
+
+    .list img{
+        margin: 0.5rem 0 0.7rem 0;
+        width: 40%;
+    }
+    .list span{
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+        cursor: default;
+    }
+
+    .list:last-child span{
+        font-size: 4rem;
+    }
+
+
+    .del{
+        top: 0;
+        right: 8px;
+        font-size: 1.5rem;
+    }
+
+}
+@media (min-width: 1024px) {
     .box{
         margin: 30px auto auto;
         width: 50rem;

@@ -24,10 +24,10 @@ const Favorites = ()=>{
 
     }
 
-    if (favoritesList.length<10){
-        addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
-    }
-    console.log(favoritesList)
+    // if (favoritesList.length<10){
+    //     addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
+    // }
+    // console.log(favoritesList)
     return (
         <div className='box'>
                 {favoritesList.map(item=>
@@ -35,7 +35,7 @@ const Favorites = ()=>{
                         <div className={'list'} key={item.id} >
 
                                 <div className='del' onClick={() => removeItem(item.id)}><span>×</span></div>
-                                <img src={`https://${item.href}/favicon.ico`} alt="图标加载失败"/>
+                                <img src={`https://${item.href}/favicon.ico`} alt="图标呢？"/>
                                 <span>{item.name}</span>
 
                         </div>
