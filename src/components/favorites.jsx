@@ -24,24 +24,26 @@ const Favorites = ()=>{
 
     }
 
-    // if (favoritesList.length<10){
-    //     addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
-    // }
+    if (favoritesList.length<10){
+        addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
+    }
     console.log(favoritesList)
     return (
         <div className='box'>
-            <ul>
                 {favoritesList.map(item=>
                     (
-                    <li key={item.id} className='list'>
-                        <div className='del' onClick={()=>removeItem(item.id)}>×</div>
-                        <img src={`https://${item.href}/favicon.ico`} alt="图标加载失败"/>
-                        <span>{item.name}</span>
-                    </li>))
-                }
-                <li className='list' onClick={()=>userClickAdd()}>+</li>
-            </ul>
+                        <div className={'list'} key={item.id} >
 
+                                <div className='del' onClick={() => removeItem(item.id)}>×</div>
+                                <img src={`https://${item.href}/favicon.ico`} alt="图标加载失败"/>
+                                <span>{item.name}</span>
+
+                        </div>
+                    ))
+                }
+                <div className={'list'} onClick={() => userClickAdd()}>
+                    <span>+</span>
+                </div>
         </div>
     )
 
