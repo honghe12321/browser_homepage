@@ -9,7 +9,7 @@ const Favorites = ()=>{
     favorites.id=0
     const [favoritesList,setFavoritesList]=useState([favorites])
     const addItem = (item) => {
-        item.id=Math.max(...favoritesList.map(item => item.id)) + 1
+        item.id=favoritesList.length + 1
         setFavoritesList(() =>[...favoritesList, item ])
     }
     const removeItem = (id) => {
@@ -24,9 +24,9 @@ const Favorites = ()=>{
 
     }
 
-    // if (favoritesList.length<10){
-    //     addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
-    // }
+    if (favoritesList.length<10){
+        addItem({name: "哔哩哔哩", href: "www.bilibili.com"})
+    }
     console.log(favoritesList)
     return (
         <div className='box'>

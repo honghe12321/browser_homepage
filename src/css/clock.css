@@ -15,7 +15,7 @@
     border-radius: 25px;
 }
 
-@media (min-width: 800px) { /* 小型设备及以上 */
+@media (min-width: 640px) { /* 小型设备及以上 */
     .timeBox{
         width: 19rem;
         height: 5rem;
