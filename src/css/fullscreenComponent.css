@@ -1,0 +1,19 @@
+.Layout{
+    position: absolute;
+    top: 0;
+
+}
+.Layout div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem;
+    border-radius: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.8rem;
+}

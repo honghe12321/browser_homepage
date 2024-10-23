@@ -42,8 +42,9 @@
 }
 
 .list img{
+    border-radius: 0.7rem;
     margin: 0.5rem 0 0.7rem 0;
-    width: 40%;
+    width: 2rem;
 }
 .list span{
     margin: 0 0 0.5rem 0;

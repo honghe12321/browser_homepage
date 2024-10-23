@@ -3,6 +3,7 @@
     font-size: 3rem;
     font-weight: bold;
     color: rgba(67, 241, 219, 0.7);
+    user-select: none;
 }
 .timeBox{
     width: 15rem;

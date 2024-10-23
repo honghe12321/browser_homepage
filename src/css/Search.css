@@ -4,9 +4,17 @@
     width: 21rem;
     height: 3.2rem;
     border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition:  transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+
+}
+.input-container:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(50px);
 }
 
 
@@ -18,8 +26,11 @@
     box-sizing: border-box;
     font-size: 1rem;
     border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.32);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0);
+}
+.input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .button {
@@ -35,6 +46,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     background-color: rgba(0, 255, 252, 0.29);
+    user-select: none;
 }
 
 .button:hover,
