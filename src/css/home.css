@@ -1,17 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png');
-    background-size: cover; /* 背景图覆盖整个区域 */
-    background-position: center; /* 背景图居中 */
-    background-repeat: no-repeat; /* 不重复背景图 */
-    min-height: 100vh; /* 确保背景图至少填满视口高度 */
+    /*background-image: url('https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png');*/
+    /*background-size: cover; !* 背景图覆盖整个区域 *!*/
+    /*background-position: center; !* 背景图居中 *!*/
+    /*background-repeat: no-repeat; !* 不重复背景图 *!*/
+    /*min-height: 100vh; !* 确保背景图至少填满视口高度 *!*/
 }
 #main-container{
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+}
+#bg{
+    position: fixed;
+    background-image: url("https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    inset: 0
 
 }
 
