@@ -1,9 +1,8 @@
 import "../css/clock.css"
 import {useEffect, useState} from "react";
 
-const Clock = () => {
+const Clock = ({isImmerseFullscreen}) => {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
-
     useEffect(() => {
         const interval = setInterval(() => {
             setTime(new Date().toLocaleTimeString());
@@ -15,7 +14,7 @@ const Clock = () => {
     }, []);
     return (
 
-        <div className="timeBox">
+        <div className={`${isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
             <div className="clock" id="clock">
                 {time}
             </div>

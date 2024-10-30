@@ -1,28 +1,36 @@
-.clock {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgba(67, 241, 219, 0.7);
-    user-select: none;
-}
 .timeBox{
     width: 15rem;
     height: 3.8rem;
+    font-size: 3rem;
     margin: 2rem auto 3rem auto;
     padding-bottom: 0.5rem;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
     align-items: center;
     border-radius: 25px;
-}
 
+}
+.timeBoxBig{
+    width: 90rem;
+    font-size: 19rem;
+    margin: 10rem auto 3rem auto;
+    padding-bottom: 0.5rem;
+    background: rgba(128, 128, 128, 0.26);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    border-radius: 5rem;
+
+}
+.clock {
+    text-align: center;
+    font-weight: bold;
+    color: rgba(67, 241, 219, 0.7);
+    user-select: none;
+}
 @media (min-width: 1024px) { /* 小型设备及以上 */
     .timeBox{
         width: 19rem;
         height: 5rem;
-
-    }
-    .clock {
         font-size: 4rem;
     }
 }

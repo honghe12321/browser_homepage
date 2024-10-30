@@ -20,3 +20,25 @@
     font-weight: bold;
     font-size: 1.8rem;
 }
+.Layout2{
+    position: absolute;
+    top: 0;
+
+}
+.Layout2 div{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 4rem 1rem 1rem;
+    border-radius: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(25px);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.8rem;
+}

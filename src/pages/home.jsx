@@ -3,17 +3,32 @@ import Search from "../components/search";
 import Clock from "../components/clock";
 import Favorites from "../components/favorites";
 import FullscreenComponent from "../components/fullscreenComponent";
+import {useState} from "react";
 
 export const Home = ()=>{
+    const [isImmerseFullscreen, setImmerseIsFullscreen] = useState(false);
+    const toggleImmerseFullscreen = () => {
+        setImmerseIsFullscreen(!isImmerseFullscreen);
+
+    }
     return (<div >
                 <div id="bg">
-                    {/*<img src='https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png' alt="背景加载失败"/>*/}
+                    <div  className={`${isImmerseFullscreen? '': 'gaussian-blur'}`}> {/*加 背景模糊*/}
+                        <div id="main-container"> {/*加 上边距*/}
+                            <Clock isImmerseFullscreen={isImmerseFullscreen}/>
+                            {isImmerseFullscreen
+                                &&
+                                <div>
+                                    <Search/>
+                                    <Favorites/>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                    <FullscreenComponent isImmerseFullscreen={isImmerseFullscreen}
+                                         toggleImmerseFullscreen={toggleImmerseFullscreen}/>
                 </div>
-                <div id="main-container">
-                    <Clock />
-                    <Search />
-                    <Favorites />
-                </div>
-                <FullscreenComponent/>
-            </div>)
+    </div>)
 }

@@ -3,7 +3,7 @@ import { GoScreenNormal } from "react-icons/go";
 import { GoScreenFull } from "react-icons/go";
 import "../css/fullscreenComponent.css"
 
-const FullscreenComponent = () => {
+const FullscreenComponent = ({toggleImmerseFullscreen}) => {
     const [isFullscreen, setIsFullscreen] = useState(false);
 
     // 处理全屏变化事件
@@ -61,20 +61,35 @@ const FullscreenComponent = () => {
     };
 
     // 处理按钮点击事件
-    const toggleFullscreen = () => {
+    const toggleFullscreen = (Immerse) => {
+        if (Immerse){
+            toggleImmerseFullscreen()
+        }
         if (!isFullscreen) {
             requestFullscreen();
         } else {
             exitFullscreen();
         }
+
+
     };
 
     return (
-        <div className="Layout">
-            <div onClick={toggleFullscreen}>
-                {isFullscreen ? <GoScreenNormal/> : <GoScreenFull/>}
+        <div>
+            <div className="Layout">
+                <div onClick={()=>toggleFullscreen(false)}>
+                    {isFullscreen ? <GoScreenNormal/> : <GoScreenFull/>}
+                </div>
+            </div>
+            <div className="Layout2">
+                <div onClick={()=>toggleFullscreen(true)}>
+                    {isFullscreen ? <GoScreenNormal/> : <GoScreenFull/>}
+                </div>
+
             </div>
         </div>
+
+
     );
 };
 
