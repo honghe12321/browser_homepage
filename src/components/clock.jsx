@@ -14,7 +14,7 @@ const Clock = ({isImmerseFullscreen}) => {
     }, []);
     return (
 
-        <div className={`${isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
+        <div className={`${!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
             <div className="clock" id="clock">
                 {time}
             </div>

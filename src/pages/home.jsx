@@ -7,16 +7,17 @@ import {useState} from "react";
 
 export const Home = ()=>{
     const [isImmerseFullscreen, setImmerseIsFullscreen] = useState(false);
-    const toggleImmerseFullscreen = () => {
-        setImmerseIsFullscreen(!isImmerseFullscreen);
-
-    }
+    // const toggleImmerseFullscreen = () => {
+    //     setImmerseIsFullscreen(!isImmerseFullscreen);
+    //
+    // }
+    console.log(isImmerseFullscreen)
     return (<div >
                 <div id="bg">
-                    <div  className={`${isImmerseFullscreen? '': 'gaussian-blur'}`}> {/*加 背景模糊*/}
+                    <div  className={`${isImmerseFullscreen? 'gaussian-blur':''}`}> {/*加 背景模糊*/}
                         <div id="main-container"> {/*加 上边距*/}
                             <Clock isImmerseFullscreen={isImmerseFullscreen}/>
-                            {isImmerseFullscreen
+                            {!isImmerseFullscreen
                                 &&
                                 <div>
                                     <Search/>
@@ -28,7 +29,7 @@ export const Home = ()=>{
                     </div>
 
                     <FullscreenComponent isImmerseFullscreen={isImmerseFullscreen}
-                                         toggleImmerseFullscreen={toggleImmerseFullscreen}/>
+                                         setImmerseIsFullscreen={setImmerseIsFullscreen}/>
                 </div>
     </div>)
 }

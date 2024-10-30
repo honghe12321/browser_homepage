@@ -11,14 +11,14 @@
 
 }
 .timeBoxBig{
-    width: 90rem;
-    font-size: 19rem;
-    margin: 10rem auto 3rem auto;
+    width: 47rem;
+    font-size: 10rem;
+    margin: -2.5rem auto 3rem auto;
     padding-bottom: 0.5rem;
-    background: rgba(128, 128, 128, 0.26);
+    background: rgba(128, 128, 128, 0.08);
     backdrop-filter: blur(20px);
     align-items: center;
-    border-radius: 5rem;
+    border-radius: 2.5rem;
 
 }
 .clock {
@@ -32,6 +32,14 @@
         width: 19rem;
         height: 5rem;
         font-size: 4rem;
+    }
+    .timeBoxBig{
+        width: 90rem;
+        font-size: 19rem;
+        margin: 10rem auto 3rem auto;
+        background: rgba(128, 128, 128, 0.25);
+        border-radius: 5rem;
+
     }
 }
 
