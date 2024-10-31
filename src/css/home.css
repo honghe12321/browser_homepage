@@ -1,11 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    /*background-image: url('https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png');*/
-    /*background-size: cover; !* 背景图覆盖整个区域 *!*/
-    /*background-position: center; !* 背景图居中 *!*/
-    /*background-repeat: no-repeat; !* 不重复背景图 *!*/
-    /*min-height: 100vh; !* 确保背景图至少填满视口高度 *!*/
+}
+
+#bg{
+    overflow: auto;
+    position: fixed;
+    background-image: url("https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    inset: 0
 }
 #main-container{
     padding-top: 5rem;
@@ -14,18 +20,32 @@ body {
     justify-content: center;
 
 }
-#bg{
-    position: fixed;
-    background-image: url("https://spc.neihanfly.com/2024/10/23/4ca13f6d71dbd.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    inset: 0;
-}
 .gaussian-blur{
     backdrop-filter: blur(5rem);
     height: 100vh;
+}
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+    width: 4px; /* 滚动条宽度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.71); /* 轨道背景色 */
+    backdrop-filter: blur(5rem);
+    border-radius: 6px; /* 轨道圆角 */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: rgba(95, 172, 189, 0.62); /* 滑块背景色 */
+    border-radius: 10px; /* 滑块圆角 */
+}
+
+
+/* 滚动条滑块 hover 样式 */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(36, 209, 246, 0.55); /* 滑块hover背景色 */
 }
 @media (min-width: 640px) {
     /* 小型设备及以上 */
@@ -37,7 +57,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-    /* 小型设备及以上 */
+    /* 大型设备及以上 */
     #main-container{
         padding-top: 10rem;
     }

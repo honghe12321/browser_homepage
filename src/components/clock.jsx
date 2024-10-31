@@ -1,5 +1,6 @@
 import "../css/clock.css"
 import {useEffect, useState} from "react";
+import Tooltip from "../services/Tooltip";
 
 const Clock = ({isImmerseFullscreen}) => {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -14,13 +15,11 @@ const Clock = ({isImmerseFullscreen}) => {
     }, []);
     return (
 
-        <div className={`${!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
-            <div className="clock" id="clock">
-                {time}
-            </div>
-        </div>
-
-    )
+            <div className={`${!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
+                <div className="clock" id="clock">
+                    {time}
+                </div></div>
+)
 }
 
 export default Clock;

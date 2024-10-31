@@ -68,7 +68,6 @@ const FullscreenComponent = ({isImmerseFullscreen,setImmerseIsFullscreen}) => {
                 requestFullscreen();
             }else {
                 setImmerseIsFullscreen(false);
-                exitFullscreen();
             }
         }else {
             if (!isFullscreen) {
@@ -87,14 +86,13 @@ const FullscreenComponent = ({isImmerseFullscreen,setImmerseIsFullscreen}) => {
         <div>
             <div className="Layout">
                 <div onClick={()=>toggleFullscreen(false)}>
-                    {isFullscreen ? <GoScreenNormal/> : <GoScreenFull/>}
+                    {isFullscreen ? <GoScreenNormal title={"退出全屏"}/> : <GoScreenFull title={"全屏模式"}/>}
                 </div>
             </div>
             <div className="Layout2">
                 <div onClick={()=>toggleFullscreen(true)}>
-                    {isFullscreen ? <GoScreenNormal/> : <GoScreenFull/>}
+                    {isImmerseFullscreen ? <GoScreenNormal title={"退出沉浸"}/> : <GoScreenFull title={"沉浸模式"}/>}
                 </div>
-
             </div>
         </div>
 
