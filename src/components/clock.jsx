@@ -1,6 +1,5 @@
 import "../css/clock.css"
 import {useEffect, useState} from "react";
-import Tooltip from "../services/Tooltip";
 
 const Clock = ({isImmerseFullscreen}) => {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
