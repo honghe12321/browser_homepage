@@ -1,14 +1,24 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "../css/favorites.css"
 
-// 从localStorage获取配置信息
-const favorites = JSON.parse(localStorage.getItem('favorites'));
+
 
 const Favorites = ()=>{
 
-    const [favoritesList,setFavoritesList]=useState(favorites? favorites:[])
-    // 保存配置信息到localStorage
-    localStorage.setItem('favorites', JSON.stringify(favoritesList));
+    const [favoritesList,setFavoritesList]=useState([])
+
+    useEffect(() => {
+        // 从localStorage获取配置信息
+        const favorites = JSON.parse(localStorage.getItem('favorites'));
+        setFavoritesList(favorites);
+    }, [])
+
+    useEffect(() => {
+        // 保存配置信息到localStorage
+        localStorage.setItem('favorites', JSON.stringify(favoritesList));
+    }, [favoritesList])
+
+
     const addItem = (item) => {
         item.id=crypto.randomUUID()
         setFavoritesList(() =>[...favoritesList, item ])
