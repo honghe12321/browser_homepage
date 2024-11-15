@@ -14,12 +14,15 @@ export const Home = ()=>{
     console.log(isImmerseFullscreen)
     return (<div >
                 <div id="bg">
-                    <div  className={`${isImmerseFullscreen? 'gaussian-blur':''}`}> {/*加 背景模糊*/}
-                        <div id="main-container"> {/*加 上边距*/}
-                            <Clock isImmerseFullscreen={isImmerseFullscreen}/>
+                    <div  className={`${isImmerseFullscreen? 'gaussian-blur mt-0':'mt-32 sm:mt-40 lg:mt-60'} `}> {/*加 背景模糊*/}
+                        <div id={`${isImmerseFullscreen?"main-container-full" :"main-container"}`}> {/*加 上边距*/}
+                            <div className='my-0 mx-auto'>
+                                <Clock isImmerseFullscreen={isImmerseFullscreen}/>
+                            </div>
+
                             {!isImmerseFullscreen
                                 &&
-                                <div>
+                                <div className='mt-8'>
                                     <Search/>
                                     <Favorites/>
                                 </div>

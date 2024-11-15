@@ -1,5 +1,5 @@
 .box{
-    margin: 30px auto auto;
+    margin:auto;
     width: 24rem;
     height: 10rem;
     /*background: rgba(0, 0, 0, 0.13);*/
@@ -159,12 +159,11 @@
     justify-content: center;
     padding: 2rem;
     z-index: 1000;
-    width: 20rem;
-    height: 10rem;
+    /*width: 20rem;*/
+    /*height: 10rem;*/
     top: 50%;
     left: 50%;
-    margin-left: -12rem;
-    margin-top: -5rem;
+    margin: auto;
     border-radius: 1rem;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
