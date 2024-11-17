@@ -41,10 +41,21 @@
     opacity: 1;
 }
 
-.list img{
+.imgIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0 0.5rem 0;
+}
+.imgIcon>div{
+    font-size: 2rem;
+    width: 2.5rem;
     border-radius: 0.7rem;
-    margin: 0.5rem 0 0.7rem 0;
-    width: 2rem;
+    aspect-ratio: 1/1;
+}
+.imgIcon>img{
+    width: 2.5rem;
+    border-radius: 0.7rem;
 }
 .list span{
     margin: 0 0 0.5rem 0;
@@ -97,9 +108,14 @@
     }
 
 
-    .list img{
+    .imgIcon{
         margin: 0.5rem 0 0.7rem 0;
-        width: 40%;
+    }
+    .imgIcon>div{
+        width: 3rem;
+    }
+    .imgIcon>img{
+        width: 3rem;
     }
     .list span{
         margin: 0 0 0.5rem 0;
@@ -129,10 +145,16 @@
         width: 8rem;
     }
 
-    .list img{
+    .imgIcon{
         margin: 0.5rem 0 1rem 0;
-        width: 40%;
     }
+    .imgIcon>div{
+        width: 3.5rem;
+    }
+    .imgIcon>img{
+        width: 3.5rem;
+    }
+
     .list span{
         margin: 0 0 0.5rem 0;
         font-size: 1rem;

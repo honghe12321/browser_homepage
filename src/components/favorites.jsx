@@ -71,7 +71,10 @@ const Favorites = ()=>{
                             <div className='del' onClick={(e) => removeItem(e,item.id)}><span>×</span></div>
                             {/*<img src={`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${item.href}&size=256`} alt="图标呢？"/>*/}
                             {/*<img src={`https://favicon.im/${item.href}?larger=true`} alt=""/>*/}
-                            <NameAvatar name={item.name} src={item.href}/>
+                            <div className="imgIcon">
+                                <NameAvatar name={item.name} src={item.href} />
+                            </div>
+
                             <span>{item.name}</span>
                         </div>
                     ))

@@ -11,7 +11,6 @@ export const Home = ()=>{
     //     setImmerseIsFullscreen(!isImmerseFullscreen);
     //
     // }
-    console.log(isImmerseFullscreen)
     return (<div >
                 <div id="bg">
                     <div  className={`${isImmerseFullscreen? 'gaussian-blur mt-0':'mt-32 sm:mt-40 lg:mt-60'} `}> {/*加 背景模糊*/}
