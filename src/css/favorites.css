@@ -48,10 +48,10 @@
     margin: 0.5rem 0 0.5rem 0;
 }
 .imgIcon>div{
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 2.5rem;
-    border-radius: 0.7rem;
     aspect-ratio: 1/1;
+    border-radius: 0.7rem;
 }
 .imgIcon>img{
     width: 2.5rem;
@@ -181,14 +181,13 @@
     justify-content: center;
     padding: 2rem;
     z-index: 1000;
-    /*width: 20rem;*/
-    /*height: 10rem;*/
-    top: 50%;
-    left: 50%;
     margin: auto;
     border-radius: 1rem;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+
 
 }
 
@@ -239,13 +238,13 @@
 .hidden{
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-1rem);
+    transform: translateY(-1rem) translate(-50%, -50%);
     transition: transform 0.3s ease, opacity 0.3s ease ;
 
 }
 
 .visible{
     opacity: 1;
-    transform: translateY(1rem);
+    transform: translateY(1rem) translate(-50%, -50%);
     transition: transform 0.3s ease, opacity 0.3s ease ;
 }

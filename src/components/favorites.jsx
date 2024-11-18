@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import "../css/favorites.css"
 import NameAvatar from "./NameAvatar";
-
+// import * as crypto from "node:crypto";
 
 const Favorites = ()=>{
 
@@ -80,19 +80,19 @@ const Favorites = ()=>{
                     ))
                 }
             <div>
-                {(
-                    <div className={`addItemFrom ${isShowAdd?'visible':'hidden'}`}>
-                        <input type="text" placeholder="请输入网站" value={website} onChange={handleWebsiteChange} />
-                        <input type="text" placeholder="请输入名称" value={name} onChange={handleNameChange} />
-                        <div>
-                            <button onClick={handleConfirm}>确认</button>
-                            <button onClick={handleCancel}>取消</button>
-                        </div>
 
-                    </div>
-                )}
             </div>
+            {(
+                <div className={`addItemFrom ${isShowAdd?'visible':'hidden'}`}>
+                    <input type="text" placeholder="请输入网站" value={website} onChange={handleWebsiteChange} />
+                    <input type="text" placeholder="请输入名称" value={name} onChange={handleNameChange} />
+                    <div>
+                        <button onClick={handleConfirm}>确认</button>
+                        <button onClick={handleCancel}>取消</button>
+                    </div>
 
+                </div>
+            )}
                 {/*最后一个list*/}
                 <div className={'list'} onClick={() => userClickAdd()}>
                     <span>+</span>
