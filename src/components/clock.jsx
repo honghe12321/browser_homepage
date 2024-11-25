@@ -15,7 +15,7 @@ function formatDate(date) {
 // const now = new Date();
 // console.log(formatDate(now)); // 输出格式化后的当前时间
 const Clock = ({isImmerseFullscreen}) => {
-    const [time, setTime] = useState(new Date().toLocaleTimeString());
+    const [time, setTime] = useState(formatDate(new Date()));
     useEffect(() => {
         const interval = setInterval(() => {
             setTime(formatDate(new Date()));
