@@ -8,9 +8,9 @@ const Favorites = ()=>{
     const [favoritesList,setFavoritesList]=useState([])
 
     useEffect(() => {
-        // 从localStorage获取配置信息
-        const favorites = JSON.parse(localStorage.getItem('favorites'));
-        setFavoritesList(favorites);
+        // 从 localStorage 获取配置信息
+        const favorites =  localStorage.getItem('favorites')
+        setFavoritesList(favorites ? JSON.parse(favorites) : []);
     }, [])
 
     useEffect(() => {
