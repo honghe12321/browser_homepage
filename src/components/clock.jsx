@@ -1,5 +1,6 @@
 import "../css/clock.css"
 import {useEffect, useState} from "react";
+import clsx from "clsx";
 
 function getCurrentTime() {
     const date = new Date()
@@ -40,12 +41,21 @@ const Clock = ({isImmerseFullscreen}) => {
     }, []);
 
     return (
-        <div className={`${!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig'}`}>
-            <span>{time.hours}</span>
-            <span>:</span>
-            <span>{time.minutes}</span>
-            <span>:</span>
-            <span>{time.seconds}</span>
+        <div className={clsx(!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig', 'relative')}>
+            <div className="invisible">
+                <p>
+                    <span>00:00:00</span>
+                </p>
+            </div>
+            <div className="absolute inset-0">
+                <p className="text-center">
+                    <span>{time.hours}</span>
+                    <span>:</span>
+                    <span>{time.minutes}</span>
+                    <span>:</span>
+                    <span>{time.seconds}</span>
+                </p>
+            </div>
         </div>
     )
 }
