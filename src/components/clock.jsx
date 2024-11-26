@@ -41,11 +41,9 @@ const Clock = ({isImmerseFullscreen}) => {
     }, []);
 
     return (
-        <div className={clsx(!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig', 'relative')}>
+        <div className={clsx(!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig', 'relative font-mono')}>
             <div className="invisible">
-                <p>
-                    <span>00:00:00</span>
-                </p>
+                <p><span>00:00:00</span></p>
             </div>
             <div className="absolute inset-0">
                 <p className="text-center">
