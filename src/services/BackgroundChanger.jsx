@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BsBox } from 'react-icons/bs';
+import React, {useState, useEffect} from 'react';
+import {BsBox} from 'react-icons/bs';
 import '../css/home.css'
 
 const BackgroundChanger = () => {
@@ -31,9 +31,12 @@ const BackgroundChanger = () => {
     return (
         <div id='bg' className='-z-10' style={{backgroundImage: `url(${backgroundImage})`}}>
             <div>
-                <label><span className='relative inline-block m-2 p-2 bg-black/20 backdrop-blur rounded-xl'><BsBox
-                    size='20' color='white'/></span><input className='hidden' type="file" accept="image/*"
-                                                           onChange={handleImageChange} value=''/></label>
+                <label>
+                    <span className='relative inline-block m-2 p-2 bg-black/20 backdrop-blur rounded-xl'>
+                        <BsBox size='20' color='white'/>
+                    </span>
+                    <input className='hidden' type="file" accept="image/*" onChange={handleImageChange} />
+                </label>
             </div>
         </div>
     );

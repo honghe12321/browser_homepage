@@ -1,6 +1,8 @@
-import "../css/clock.css"
-import {useEffect, useState} from "react";
-import clsx from "clsx";
+import {useEffect, useState} from 'react'
+import clsx from 'clsx'
+import {useAtomValue} from 'jotai'
+import {immerseAtom} from '../atoms/fullscreen'
+import '../css/clock.css'
 
 function getCurrentTime() {
     const date = new Date()
@@ -27,21 +29,22 @@ function getCurrentTime() {
 
 // const now = new Date();
 // console.log(formatDate(now)); // 输出格式化后的当前时间
-const Clock = ({isImmerseFullscreen}) => {
-    const [time, setTime] = useState(getCurrentTime());
+const Clock = () => {
+    const [time, setTime] = useState(getCurrentTime())
+    const immerse = useAtomValue(immerseAtom)
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTime(getCurrentTime());
-        }, 1e3);
+            setTime(getCurrentTime())
+        }, 1e3)
 
         return () => {
-            clearInterval(interval);
-        };
-    }, []);
+            clearInterval(interval)
+        }
+    }, [])
 
     return (
-        <div className={clsx(!isImmerseFullscreen ? 'timeBox' : 'timeBoxBig', 'relative font-mono')}>
+        <div className={clsx(!immerse ? 'timeBox' : 'timeBoxBig', 'relative font-mono')}>
             <div className="invisible">
                 <p><span>00:00:00</span></p>
             </div>
