@@ -4,7 +4,8 @@ import '../css/home.css'
 const BackgroundChanger = () => {
     const [backgroundImage, setBackgroundImage] = useState(null);
     const [cachedImage, setCachedImage] = useState(null);
-
+    if ( cachedImage){
+    }
     // 从localStorage中读取缓存的背景图片URL
     useEffect(() => {
         const cachedUrl = localStorage.getItem('backgroundImage');
