@@ -4,6 +4,7 @@ import Clock from "../components/clock";
 import Favorites from "../components/favorites";
 import FullscreenComponent from "../components/fullscreenComponent";
 import {useState} from "react";
+import BackgroundChanger from '../services/BackgroundChanger'
 
 export const Home = ()=>{
     const [isImmerseFullscreen, setImmerseIsFullscreen] = useState(false);
@@ -12,7 +13,7 @@ export const Home = ()=>{
     //
     // }
     return (<div >
-                <div id="bg">
+                <BackgroundChanger/>
                     <div  className={`${isImmerseFullscreen? 'gaussian-blur mt-0':'mt-32 sm:mt-40 lg:mt-60'} `}> {/*加 背景模糊*/}
                         <div id={`${isImmerseFullscreen?"main-container-full" :"main-container"}`}> {/*加 上边距*/}
                             <div className='my-0 mx-auto'>
@@ -32,6 +33,6 @@ export const Home = ()=>{
 
                     <FullscreenComponent isImmerseFullscreen={isImmerseFullscreen}
                                          setImmerseIsFullscreen={setImmerseIsFullscreen}/>
-                </div>
+
     </div>)
 }

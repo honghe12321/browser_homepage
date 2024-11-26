@@ -7,7 +7,7 @@ body {
 #bg{
     overflow: auto;
     position: fixed;
-    background-image: url("https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png");
+    /*background-image: url("https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
