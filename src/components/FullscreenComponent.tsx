@@ -1,5 +1,5 @@
 import {useAtom} from 'jotai'
-import React, {useEffect} from 'react'
+import {useEffect} from 'react'
 import {GoScreenNormal} from 'react-icons/go'
 import {GoScreenFull} from 'react-icons/go'
 import {fullscreenAtom, immerseAtom} from '../atoms/fullscreen'
@@ -12,10 +12,7 @@ const FullscreenComponent = () => {
 
     // 处理全屏变化事件
     const handleFullscreenChange = () => {
-        const isFullscreen = document.fullscreenElement ||
-            document.mozFullScreenElement ||
-            document.webkitFullscreenElement ||
-            document.msFullscreenElement
+        const isFullscreen = document.fullscreenElement
         // 检查当前是否处于全屏状态
         setIsFullscreen(!!isFullscreen);
     }
@@ -42,12 +39,6 @@ const FullscreenComponent = () => {
         const elem = document.documentElement; // 获取根元素
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-            elem.msRequestFullscreen();
         }
     };
 
@@ -55,17 +46,11 @@ const FullscreenComponent = () => {
     const exitFullscreen = () => {
         if (document.exitFullscreen) {
             document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { /* Firefox */
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { /* IE/Edge */
-            document.msExitFullscreen();
         }
     };
 
     // 处理按钮点击事件
-    const toggleFullscreen = (one) => {
+    const toggleFullscreen = (one: boolean) => {
         if (one) {
             if (!immerse) {
                 setImmerseIsFullscreen(true);

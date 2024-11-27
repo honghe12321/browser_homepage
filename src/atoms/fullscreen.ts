@@ -7,5 +7,4 @@ const immerseAtom = atom(false)
 export {
     fullscreenAtom,
     immerseAtom,
-
 }

@@ -1,4 +1,4 @@
-function b64Blob(b64) {
+function b64Blob(b64: string): string {
     const mimeTypeMatch = b64.match(/^data:([^;]+);base64,/)
     if (mimeTypeMatch) {
         const mimeType = mimeTypeMatch[1]
@@ -8,7 +8,7 @@ function b64Blob(b64) {
         for (let i = 0; i < binaryStr.length; i++) {
             byteArr[i] = binaryStr.charCodeAt(i)
         }
-        const blob = new Blob([byteArr], { type: mimeType })
+        const blob = new Blob([byteArr], {type: mimeType})
         return URL.createObjectURL(blob)
     }
     return b64

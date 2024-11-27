@@ -1,6 +1,6 @@
-import {Provider} from 'jotai';
+import {Provider} from 'jotai'
 import {Home} from './pages/home'
-import {jotaiStore} from './libs/store';
+import {jotaiStore} from './providers/store'
 
 // import {Home2} from "./pages/demo/home"
 function App() {
@@ -12,4 +12,4 @@ function App() {
     );
 }
 
-export default App;
+export default App
