@@ -34,6 +34,7 @@ const FullscreenComponent = () => {
             document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
             document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // 请求全屏

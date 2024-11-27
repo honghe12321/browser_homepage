@@ -18,6 +18,7 @@ const BackgroundChanger = () => {
         return () => {
             URL.revokeObjectURL(backgroundImage);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
