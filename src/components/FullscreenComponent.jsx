@@ -83,7 +83,7 @@ const FullscreenComponent = () => {
     }
 
     return (
-        <div>
+        <>
             <div className="Layout">
                 <div onClick={() => toggleFullscreen(false)}>
                     {fullscreen ? <GoScreenNormal title={"退出全屏"}/> : <GoScreenFull title={"全屏模式"}/>}
@@ -94,7 +94,7 @@ const FullscreenComponent = () => {
                     {immerse ? <GoScreenNormal title={"退出沉浸"}/> : <GoScreenFull title={"沉浸模式"}/>}
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
