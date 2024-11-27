@@ -86,15 +86,18 @@ const FullscreenComponent = () => {
     return (
         <>
             <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
-                <div onClick={() => toggleFullscreen(false)}>
-                    {fullscreen ? <GoScreenNormal title={"退出全屏"} size='20' color='white'/> : <GoScreenFull title={"全屏模式"} size='20' color='white'/>}
+                <div onClick={() => toggleFullscreen(true)}>
+                    {immerse ? <GoScreenNormal title={"退出沉浸"} size='20' color='white'/> :
+                        <GoScreenFull title={"沉浸模式"} size='20' color='white'/>}
                 </div>
             </div>
             <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
-                <div onClick={() => toggleFullscreen(true)}>
-                    {immerse ? <GoScreenNormal title={"退出沉浸"} size='20' color='white'/> : <GoScreenFull title={"沉浸模式"} size='20' color='white'/>}
+                <div onClick={() => toggleFullscreen(false)}>
+                    {fullscreen ? <GoScreenNormal title={"退出全屏"} size='20' color='white'/> :
+                        <GoScreenFull title={"全屏模式"} size='20' color='white'/>}
                 </div>
             </div>
+
         </>
     );
 };

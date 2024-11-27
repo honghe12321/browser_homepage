@@ -1,4 +1,4 @@
-import {BsBox} from 'react-icons/bs';
+import { BsCardImage } from "react-icons/bs";
 import {b64Blob} from '../libs/base64';
 import '../css/home.css'
 import {backgroundImageAtom} from "../atoms/background";
@@ -26,7 +26,7 @@ const BackgroundChanger = () => {
         <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
             <label>
                 <span >
-                    <BsBox size='20' color='white'/>
+                    <BsCardImage size='20' color='white'/>
                 </span>
                 <input className='hidden' type="file" accept="image/*" onChange={handleImageChange} />
             </label>
