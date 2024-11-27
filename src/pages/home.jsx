@@ -4,18 +4,16 @@ import {immerseAtom} from '../atoms/fullscreen'
 import Search from '../components/Search'
 import Clock from '../components/Clock'
 import Favorites from '../components/Favorites'
-// import FullscreenComponent from '../components/fullscreenComponent'
-// import BackgroundChanger from '../components/BackgroundChanger'
 import '../css/home.css'
 import {Tool} from "../components/Tool";
+import Background from "../components/Background";
 
 
 export const Home = () => {
     const immerse = useAtomValue(immerseAtom)
 
     return (<div>
-        {/*<BackgroundChanger/>*/}
-
+        <Background/>
             <div  className={clsx(immerse ? 'gaussian-blur mt-0' : 'mt-32 sm:mt-40 lg:mt-60')}> {/*加 背景模糊*/}
                 <div id={clsx(immerse ? 'main-container-full' : 'main-container')}> {/*加 上边距*/}
                     <div className='my-0 mx-auto'>
@@ -32,6 +30,6 @@ export const Home = () => {
                 </div>
             </div>
         <Tool/>
-            {/*<FullscreenComponent />*/}
+
     </div>)
 }

@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import {GoScreenNormal} from 'react-icons/go'
 import {GoScreenFull} from 'react-icons/go'
 import {fullscreenAtom, immerseAtom} from '../atoms/fullscreen'
-import '../css/fullscreenComponent.css'
+// import '../css/fullscreenComponent.css'
 
 
 const FullscreenComponent = () => {
@@ -84,14 +84,14 @@ const FullscreenComponent = () => {
 
     return (
         <>
-            <div className="Layout">
+            <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
                 <div onClick={() => toggleFullscreen(false)}>
-                    {fullscreen ? <GoScreenNormal title={"退出全屏"}/> : <GoScreenFull title={"全屏模式"}/>}
+                    {fullscreen ? <GoScreenNormal title={"退出全屏"} size='20' color='white'/> : <GoScreenFull title={"全屏模式"} size='20' color='white'/>}
                 </div>
             </div>
-            <div className="Layout2">
+            <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
                 <div onClick={() => toggleFullscreen(true)}>
-                    {immerse ? <GoScreenNormal title={"退出沉浸"}/> : <GoScreenFull title={"沉浸模式"}/>}
+                    {immerse ? <GoScreenNormal title={"退出沉浸"} size='20' color='white'/> : <GoScreenFull title={"沉浸模式"} size='20' color='white'/>}
                 </div>
             </div>
         </>
