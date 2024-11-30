@@ -1,12 +1,14 @@
 import { BsChevronUp,BsChevronDown} from 'react-icons/bs'
-import {useState} from 'react'
 import clsx from 'clsx'
+import {useState} from 'react'
 import BackgroundChanger from './BackgroundChanger'
 import FullscreenComponent from './FullscreenComponent'
+import {Theme} from "./ChangerThemeColor.tsx";
 
 export function Tool() {
+
     // 控制设置面板显示或隐藏
-    const [showSettings, setShowSettings] = useState<boolean>(true);
+    const [showSettings, setShowSettings] = useState<boolean>(false);
 
     return (
         <>
@@ -25,6 +27,7 @@ export function Tool() {
                     className={clsx('p-3 bg-white/20 backdrop-blur rounded-2xl flex',)}>
                     <BackgroundChanger/>
                     <FullscreenComponent/>
+                    <Theme/>
                 </div>
             </div>
         </>

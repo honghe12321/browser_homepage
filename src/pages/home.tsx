@@ -7,6 +7,7 @@ import Favorites from '../components/Favorites'
 import '../css/home.css'
 import {Tool} from "../components/Tool";
 import Background from "../components/Background";
+import {Theme} from "../components/ChangerThemeColor"
 
 
 export const Home = () => {
@@ -19,17 +20,15 @@ export const Home = () => {
                     <div className='my-0 mx-auto'>
                         <Clock/>
                     </div>
-
                     {!immerse && (
                         <div className='mt-8'>
                             <Search/>
                             <Favorites/>
                         </div>
                     )}
-
                 </div>
             </div>
         <Tool/>
-
+        <Theme/>
     </div>)
 }

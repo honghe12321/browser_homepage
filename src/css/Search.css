@@ -3,7 +3,7 @@
     width: 21rem;
     height: 3.2rem;
     border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.32);
+    background-color: rgba(255, 255, 255, 0.22);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
