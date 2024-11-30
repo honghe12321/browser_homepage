@@ -7,7 +7,6 @@ import Favorites from '../components/Favorites'
 import '../css/home.css'
 import {Tool} from "../components/Tool";
 import Background from "../components/Background";
-import {Theme} from "../components/ChangerThemeColor"
 
 
 export const Home = () => {
@@ -29,6 +28,5 @@ export const Home = () => {
                 </div>
             </div>
         <Tool/>
-        <Theme/>
     </div>)
 }
