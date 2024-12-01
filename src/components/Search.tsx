@@ -1,12 +1,15 @@
 import {useState} from 'react'
-import type {ChangeEvent} from 'react'
-import '../css/search.css'
+import type {ChangeEvent, FormEvent} from 'react'
+import clsx from 'clsx'
+import styles from '../css/search.module.css'
 
 const Search = () => {
     const [value, setValue] = useState<string>('')
 
-    const search = () => {
-        if (value !== "") {
+    const search = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+
+        if (value !== '') {
             window.open('https://www.baidu.com/s?wd=' + value)
         }
     }
@@ -16,11 +19,19 @@ const Search = () => {
     }
 
     return (
-        <div className="input-container">
-            <input type="text" className="input" onChange={onValueChange} placeholder="请输入内容"/>
-            <button className='button bg-primary' onClick={search}>搜索</button>
+        <div className={styles['input-container']}>
+            <form onSubmit={search}>
+                <div className={styles['form-container']}>
+                    <label>
+                        <input type='search' className={styles['input']} onChange={onValueChange}
+                               placeholder='输入搜索词' autoComplete='off' name='word' autoCorrect='off' maxLength={64}
+                        />
+                    </label>
+                    <button className={clsx(styles['input'], 'bg-primary')} type='submit'>搜索</button>
+                </div>
+            </form>
         </div>
-    );
+    )
 }
 
 export default Search;
