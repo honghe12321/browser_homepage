@@ -4,16 +4,17 @@ import {useAtomValue} from 'jotai'
 import {immerseAtom} from '../atoms/fullscreen'
 import '../css/clock.css'
 
+// type ClockTime = [number, number, number, number, number, number]
 
 function getCurrentTime() {
     const date = new Date()
-    const hours = date.getHours().toString().padStart(2, '0')
-    const minutes = date.getMinutes().toString().padStart(2, '0')
-    const seconds = date.getSeconds().toString().padStart(2, '0')
+    const hours = date.getHours().toString().padStart(2, '0').split('')
+    const minutes = date.getMinutes().toString().padStart(2, '0').split('')
+    const seconds = date.getSeconds().toString().padStart(2, '0').split('')
 
-    return {
-        hours, minutes, seconds
-    }
+    return [
+        hours[0], hours[1], minutes[0], minutes[1], seconds[0], seconds[1]
+    ]
 }
 
 /** function formatDate(date) {
@@ -51,11 +52,11 @@ const Clock = () => {
             </div>
             <div className="absolute inset-0">
                 <p className='text-center text-primary'>
-                    <span>{time.hours}</span>
+                    <span>{time[0]}</span><span>{time[1]}</span>
                     <span>:</span>
-                    <span>{time.minutes}</span>
+                    <span>{time[2]}</span><span>{time[3]}</span>
                     <span>:</span>
-                    <span>{time.seconds}</span>
+                    <span>{time[4]}</span><span>{time[5]}</span>
                 </p>
             </div>
         </div>
