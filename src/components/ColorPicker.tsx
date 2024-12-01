@@ -15,6 +15,7 @@ interface PickerProps {
 
 function Picker(props: PickerProps) {
     const containerRef = useRef<HTMLDivElement>(null)
+    const [hex, setHex] = useState<string>()
     const [hsl, setHsl] = useState<HslColor>(() => {
 
         const color = localStorage.getItem('themeColor')
@@ -40,7 +41,8 @@ function Picker(props: PickerProps) {
         }
 
         requestAnimationFrame(() => {
-            const hex = hslToHex(hsl.h, hsl.s, hsl.l);
+            const hex = hslToHex(hsl.h, hsl.s, hsl.l)
+            setHex(hex)
             props.onChange(hex)
         })
 
@@ -65,7 +67,7 @@ function Picker(props: PickerProps) {
                         <p className="text-right">
                             <label>
                                 原生调色板
-                                <input type='color' onChange={onColorChange}/>
+                                <input type='color' value={hex} onChange={onColorChange}/>
                             </label>
                         </p>
                     </div>
