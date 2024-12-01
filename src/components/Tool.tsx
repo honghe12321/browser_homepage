@@ -18,13 +18,12 @@ export function Tool() {
                     {/*设置按钮*/}
                     <div className='inline-block px-2 pt-0.5 bg-white/20 backdrop-blur rounded-t-lg'
                          onClick={() => setShowSettings(prev => !prev)}>
-                        {showSettings ? < BsChevronDown size='20' color='white'/>
-                                        : < BsChevronUp size='20' color='white'/>}
+                        {showSettings ? <BsChevronDown size='20' color='white'/>
+                                        : <BsChevronUp size='20' color='white'/>}
 
                     </div>
                 </div>
-                <div
-                    className={clsx('p-3 bg-white/20 backdrop-blur rounded-2xl flex',)}>
+                <div className='p-3 bg-white/20 backdrop-blur rounded-2xl flex gap-2'>
                     <BackgroundChanger/>
                     <FullscreenComponent/>
                     <Theme/>
