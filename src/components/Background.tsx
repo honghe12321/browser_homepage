@@ -7,7 +7,7 @@ const BackgroundChanger = () => {
 
     return (
         <div id='bg' className='-z-10' style={{backgroundImage: `url(${backgroundImage})`}}></div>
-    );
-};
+    )
+}
 
-export default BackgroundChanger;
+export default BackgroundChanger
