@@ -43,7 +43,9 @@ function Picker(props: PickerProps) {
     return (
         <div className='fixed inset-0'>
             <div className="md:w-3/5 w-4/5 absolute bottom-5 translate-x-1/2 right-1/2">
-                <div className='backdrop-blur p-5 rounded-md'>
+                <div className='backdrop-blur p-5 rounded-md' style={{
+                    animation: 'fade-in 180ms'
+                }}>
                     <div className="grid grid-cols-2 items-center py-1">
                         <p>
                             <span>HSL 调色面板</span>
