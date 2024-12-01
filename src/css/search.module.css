@@ -23,8 +23,12 @@
     border: none;
     box-sizing: border-box;
     font-size: 1rem;
-    border-radius: 3rem;
+    /*border-radius: 3rem;*/
     background-color: rgba(255, 255, 255, 0);
+}
+
+.input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
 }
 
 .input:focus {
@@ -33,19 +37,18 @@
 }
 
 .button {
-    position: absolute;
+    /*position: absolute;*/
     font-size: 15px;
-    top: 0;
-    right: 0;
-    height: calc(100%);
-    width: 20%;
+    /*top: 0;*/
+    /*right: 0;*/
+    height: 100%;
+    width: 100%;
     color: white;
     border: none;
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     background-color: rgba(0, 255, 252, 0.29);
-    user-select: none;
 }
 
 .button:hover,
@@ -65,4 +68,5 @@
     display: grid;
     height: 3.2rem;
     grid-template-columns: 3fr minmax(60px, 1fr);
+    user-select: none;
 }

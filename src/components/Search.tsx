@@ -27,7 +27,7 @@ const Search = () => {
                                placeholder='输入搜索词' autoComplete='off' name='word' autoCorrect='off' maxLength={64}
                         />
                     </label>
-                    <button className={clsx(styles['input'], 'bg-primary')} type='submit'>搜索</button>
+                    <button className={clsx(styles['button'], 'bg-primary')} type='submit'>搜索</button>
                 </div>
             </form>
         </div>
