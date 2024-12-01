@@ -14,12 +14,12 @@ const BackgroundChanger = () => {
             const reader = new FileReader()
             reader.addEventListener('load', (evt) => {
                 if (evt.target) {
-                    const base64Url = evt.target.result;
+                    const base64Url = evt.target.result
 
                     if (typeof base64Url === 'string') {
-                        setBackgroundImage(b64Blob(base64Url));
-                        // 将图片URL存储到localStorage中
-                        localStorage.setItem('backgroundImage', base64Url);
+                        setBackgroundImage(b64Blob(base64Url))
+
+                        localStorage.setItem('backgroundImage', base64Url)
                     }
                 }
             }, false)
