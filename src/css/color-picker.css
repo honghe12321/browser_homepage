@@ -1,0 +1,148 @@
+.color-picker {
+    --h: 50;
+    --s: 100%;
+    --l: 50%;
+}
+
+.color-picker .color-bar {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.color-picker .color-bar.color-bar0 {
+    background-color: hsl(var(--h), var(--s), var(--l));
+}
+
+/*
+.color-picker .color-bar.color-bar1 {
+    background: linear-gradient(
+            to right,
+            hsl(0, 100%, 50%),
+            hsl(10, 100%, 50%),
+            hsl(20, 100%, 50%),
+            hsl(30, 100%, 50%),
+            hsl(40, 100%, 50%),
+            hsl(50, 100%, 50%),
+            hsl(60, 100%, 50%),
+            hsl(70, 100%, 50%),
+            hsl(80, 100%, 50%),
+            hsl(90, 100%, 50%),
+            hsl(100, 100%, 50%),
+            hsl(110, 100%, 50%),
+            hsl(120, 100%, 50%),
+            hsl(130, 100%, 50%),
+            hsl(140, 100%, 50%),
+            hsl(150, 100%, 50%),
+            hsl(160, 100%, 50%),
+            hsl(170, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(190, 100%, 50%),
+            hsl(200, 100%, 50%),
+            hsl(210, 100%, 50%),
+            hsl(220, 100%, 50%),
+            hsl(230, 100%, 50%),
+            hsl(240, 100%, 50%),
+            hsl(250, 100%, 50%),
+            hsl(260, 100%, 50%),
+            hsl(270, 100%, 50%),
+            hsl(280, 100%, 50%),
+            hsl(290, 100%, 50%),
+            hsl(300, 100%, 50%),
+            hsl(310, 100%, 50%),
+            hsl(320, 100%, 50%),
+            hsl(330, 100%, 50%),
+            hsl(340, 100%, 50%),
+            hsl(350, 100%, 50%),
+            hsl(360, 100%, 50%)
+    );
+}
+*/
+
+.color-picker .color-bar.color-bar1 {
+    background: linear-gradient(
+            to right,
+            hsl(0, var(--s), var(--l)),
+            hsl(10, var(--s), var(--l)),
+            hsl(20, var(--s), var(--l)),
+            hsl(30, var(--s), var(--l)),
+            hsl(40, var(--s), var(--l)),
+            hsl(50, var(--s), var(--l)),
+            hsl(60, var(--s), var(--l)),
+            hsl(70, var(--s), var(--l)),
+            hsl(80, var(--s), var(--l)),
+            hsl(90, var(--s), var(--l)),
+            hsl(100, var(--s), var(--l)),
+            hsl(110, var(--s), var(--l)),
+            hsl(120, var(--s), var(--l)),
+            hsl(130, var(--s), var(--l)),
+            hsl(140, var(--s), var(--l)),
+            hsl(150, var(--s), var(--l)),
+            hsl(160, var(--s), var(--l)),
+            hsl(170, var(--s), var(--l)),
+            hsl(180, var(--s), var(--l)),
+            hsl(190, var(--s), var(--l)),
+            hsl(200, var(--s), var(--l)),
+            hsl(210, var(--s), var(--l)),
+            hsl(220, var(--s), var(--l)),
+            hsl(230, var(--s), var(--l)),
+            hsl(240, var(--s), var(--l)),
+            hsl(250, var(--s), var(--l)),
+            hsl(260, var(--s), var(--l)),
+            hsl(270, var(--s), var(--l)),
+            hsl(280, var(--s), var(--l)),
+            hsl(290, var(--s), var(--l)),
+            hsl(300, var(--s), var(--l)),
+            hsl(310, var(--s), var(--l)),
+            hsl(320, var(--s), var(--l)),
+            hsl(330, var(--s), var(--l)),
+            hsl(340, var(--s), var(--l)),
+            hsl(350, var(--s), var(--l)),
+            hsl(360, var(--s), var(--l))
+    );
+}
+
+.color-picker .color-bar.color-bar2 {
+    background: linear-gradient(
+            to right,
+            hsl(var(--h), 0%, var(--l)),
+            hsl(var(--h), 10%, var(--l)),
+            hsl(var(--h), 20%, var(--l)),
+            hsl(var(--h), 30%, var(--l)),
+            hsl(var(--h), 40%, var(--l)),
+            hsl(var(--h), 50%, var(--l)),
+            hsl(var(--h), 60%, var(--l)),
+            hsl(var(--h), 70%, var(--l)),
+            hsl(var(--h), 80%, var(--l)),
+            hsl(var(--h), 90%, var(--l)),
+            hsl(var(--h), 100%, var(--l))
+    );
+}
+
+.color-picker .color-bar.color-bar3 {
+    background: linear-gradient(
+            to right,
+            hsl(var(--h), var(--s), 0%),
+            hsl(var(--h), var(--s), 10%),
+            hsl(var(--h), var(--s), 20%),
+            hsl(var(--h), var(--s), 30%),
+            hsl(var(--h), var(--s), 40%),
+            hsl(var(--h), var(--s), 50%),
+            hsl(var(--h), var(--s), 60%),
+            hsl(var(--h), var(--s), 70%),
+            hsl(var(--h), var(--s), 80%),
+            hsl(var(--h), var(--s), 90%),
+            hsl(var(--h), var(--s), 100%)
+    );
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
