@@ -1,10 +1,9 @@
-
 body {
     margin: 0;
     padding: 0;
 }
 
-#bg{
+#bg {
     overflow: auto;
     position: fixed;
     /*background-image: url("https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png");*/
@@ -15,22 +14,25 @@ body {
     inset: 0;
 }
 
-#main-container{
+#main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-#main-container-full{
+
+#main-container-full {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.gaussian-blur{
+
+.gaussian-blur {
     backdrop-filter: blur(5rem);
     height: 100vh;
 }
+
 /* 全局滚动条样式 */
 ::-webkit-scrollbar {
     width: 4px; /* 滚动条宽度 */
@@ -54,6 +56,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(36, 209, 246, 0.55); /* 滑块hover背景色 */
 }
+
 /*@media (min-width: 640px) {*/
 /*    !* 小型设备及以上 *!*/
 /*    #main-container{*/
@@ -72,7 +75,7 @@ body {
 
 /*}*/
 @media (prefers-color-scheme: dark) {
-    #bg{
-        filter:brightness(0.5);
+    #bg {
+        filter: brightness(0.5);
     }
 }

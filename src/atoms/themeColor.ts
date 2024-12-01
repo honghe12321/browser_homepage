@@ -14,6 +14,8 @@ themeColorAtom.onMount = (setAtom) => {
 jotaiStore.sub(themeColorAtom, () => {
     const color: string = jotaiStore.get(themeColorAtom)
 
+    document.documentElement.style.setProperty('--primary', color);
+
     localStorage.setItem('themeColor', color)
 })
 

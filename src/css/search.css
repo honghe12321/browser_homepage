@@ -7,10 +7,10 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition:  transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
-
+    transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
 }
-.input-container:hover{
+
+.input-container:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(50px);
@@ -27,6 +27,7 @@
     border-radius: 3rem;
     background-color: rgba(255, 255, 255, 0);
 }
+
 .input:focus {
     border-color: #007bff;
     outline: none;
@@ -54,7 +55,8 @@
     color: #000000;
 }
 
-@media (min-width: 640px) { /* 小型设备及以上 */
+@media (min-width: 640px) {
+    /* 小型设备及以上 */
     .input-container {
         width: 26rem;
     }

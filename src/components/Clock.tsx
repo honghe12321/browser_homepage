@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import {useAtomValue} from 'jotai'
 import {immerseAtom} from '../atoms/fullscreen'
 import '../css/clock.css'
-import {themeColorAtom} from "../atoms/themeColor.ts";
 
 
 function getCurrentTime() {
@@ -33,8 +32,7 @@ function getCurrentTime() {
 // console.log(formatDate(now)); // 输出格式化后的当前时间
 const Clock = () => {
     const [time, setTime] = useState(getCurrentTime())
-    const immerse = useAtomValue(immerseAtom)
-    const themColor =useAtomValue(themeColorAtom)
+    const immerse: boolean = useAtomValue(immerseAtom)
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -52,9 +50,7 @@ const Clock = () => {
                 <p><span>00:00:00</span></p>
             </div>
             <div className="absolute inset-0">
-                <p className={"text-center"} style={{
-                    color:themColor
-                }}>
+                <p className='text-center text-primary'>
                     <span>{time.hours}</span>
                     <span>:</span>
                     <span>{time.minutes}</span>

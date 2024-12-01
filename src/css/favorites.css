@@ -1,5 +1,5 @@
-.box{
-    margin:auto;
+.box {
+    margin: auto;
     width: 24rem;
     height: 10rem;
     /*background: rgba(0, 0, 0, 0.13);*/
@@ -28,7 +28,7 @@
     background: rgba(255, 255, 255, 0.2);
     border-radius: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.1);
-    transition:  transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+    transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
 }
 
 .list:hover {
@@ -37,33 +37,37 @@
     backdrop-filter: blur(50px);
 
 }
-.list:hover>div {
+
+.list:hover > div {
     opacity: 1;
 }
 
-.imgIcon{
+.imgIcon {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0.5rem 0 0.5rem 0;
 }
-.imgIcon>div{
+
+.imgIcon > div {
     font-size: 1.5rem;
     width: 2.5rem;
     aspect-ratio: 1/1;
     border-radius: 0.7rem;
 }
-.imgIcon>img{
+
+.imgIcon > img {
     width: 2.5rem;
     border-radius: 0.7rem;
 }
-.list span{
+
+.list span {
     margin: 0 0 0.5rem 0;
     font-size: 0.9rem;
     cursor: default;
 }
 
-.list:last-child span{
+.list:last-child span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,10 +80,11 @@
 
 }
 
-.list:last-child:hover span{
+.list:last-child:hover span {
     color: red;
 }
-.del{
+
+.del {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -92,81 +97,91 @@
     opacity: 0;
     font-size: 1rem;
 }
-.list div span:hover{
+
+.list div span:hover {
     color: red;
 }
 
 
-@media (min-width: 640px) { /* 小型设备及以上 */
-    .box{
+@media (min-width: 640px) {
+    /* 小型设备及以上 */
+    .box {
         width: 40rem;
         height: 10rem;
     }
+
     .list {
 
         width: 8rem;
     }
 
 
-    .imgIcon{
+    .imgIcon {
         margin: 0.5rem 0 0.7rem 0;
     }
-    .imgIcon>div{
+
+    .imgIcon > div {
         width: 3rem;
     }
-    .imgIcon>img{
+
+    .imgIcon > img {
         width: 3rem;
     }
-    .list span{
+
+    .list span {
         margin: 0 0 0.5rem 0;
         font-size: 1rem;
         cursor: default;
     }
 
-    .list:last-child span{
+    .list:last-child span {
         font-size: 4rem;
     }
 
 
-    .del{
+    .del {
         top: 0;
         right: 8px;
         font-size: 1.5rem;
     }
 
 }
+
 @media (min-width: 1024px) {
-    .box{
+    .box {
         margin: 30px auto auto;
         width: 50rem;
         height: 10rem;
     }
+
     .list {
         width: 8rem;
     }
 
-    .imgIcon{
+    .imgIcon {
         margin: 0.5rem 0 1rem 0;
     }
-    .imgIcon>div{
-        width: 3.5rem;
-    }
-    .imgIcon>img{
+
+    .imgIcon > div {
         width: 3.5rem;
     }
 
-    .list span{
+    .imgIcon > img {
+        width: 3.5rem;
+    }
+
+    .list span {
         margin: 0 0 0.5rem 0;
         font-size: 1rem;
         cursor: default;
     }
 
-    .list:last-child span{
+    .list:last-child span {
         font-size: 5rem;
     }
 
 
-    .del{
+    .del {
         top: 0;
         right: 8px;
         font-size: 1.5rem;
@@ -235,16 +250,16 @@
     background-color: #0056b3;
 }
 
-.hidden{
+.hidden {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease ;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
 }
 
-.visible{
+.visible {
     opacity: 1;
     transform: translateY(1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease ;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
