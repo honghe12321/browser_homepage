@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {useAtom} from 'jotai'
 import {b64Blob} from '../libs/base64'
 import {backgroundImageAtom} from '../atoms/background'
+import {defaultBackgroundImage} from '../common/config.ts';
 import '../css/home.css'
 
 const BackgroundChanger = () => {
@@ -13,7 +14,7 @@ const BackgroundChanger = () => {
         if (cachedUrl) {
             setBackgroundImage(b64Blob(cachedUrl))
         } else {
-            setBackgroundImage('https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png')
+            setBackgroundImage(defaultBackgroundImage)
         }
 
         return () => {

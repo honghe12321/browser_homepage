@@ -1,6 +1,7 @@
-import {atom} from 'jotai';
+import {atom} from 'jotai'
+import {defaultBackgroundImage} from '../common/config.ts'
 
-const backgroundImageAtom = atom('https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png')
+const backgroundImageAtom = atom(defaultBackgroundImage)
 
 export {
     backgroundImageAtom,
