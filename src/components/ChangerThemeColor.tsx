@@ -1,8 +1,10 @@
-import {useState} from 'react';
-import {useSetAtom} from 'jotai';
+import {useEffect, useState} from 'react';
+import {useAtomValue, useSetAtom} from 'jotai';
 import {BsFlower3} from 'react-icons/bs'
 import {themeColorAtom} from '../atoms/themeColor'
 import ColorPicker from './ColorPicker'
+import {toolUnfoldAtom} from "../atoms/tools";
+
 
 export const Theme = () => {
     const [show, setShow] = useState<boolean>(false)
@@ -14,6 +16,14 @@ export const Theme = () => {
     const handleClick = () => {
         setShow(!show)
     }
+
+    const toolUnfold = useAtomValue(toolUnfoldAtom)
+
+    useEffect(() => {
+        if (!toolUnfold) {
+            setShow(false)
+        }
+    }, [toolUnfold])
 
     return (
         <>

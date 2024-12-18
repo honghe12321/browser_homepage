@@ -1,13 +1,14 @@
 import { BsChevronUp,BsChevronDown} from 'react-icons/bs'
 import clsx from 'clsx'
-import {useState} from 'react'
 import BackgroundChanger from './BackgroundChanger'
 import FullscreenComponent from './FullscreenComponent'
 import {Theme} from "./ChangerThemeColor.tsx";
+import {toolUnfoldAtom} from "../atoms/tools.ts";
+import {useAtom} from "jotai";
 
 export function Tool() {
     // 控制设置面板显示或隐藏
-    const [showSettings, setShowSettings] = useState<boolean>(false)
+    const [showSettings, setShowSettings]=useAtom(toolUnfoldAtom)
 
     return (
         <div className={clsx('fixed bottom-0 left-1/2 z-10 transform -translate-x-1/2 transition-all duration-500 ease-in-out', showSettings ? 'translate-y-0' : 'translate-y-16')}>
