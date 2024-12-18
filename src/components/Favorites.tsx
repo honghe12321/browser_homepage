@@ -92,8 +92,8 @@ const Favorites = () => {
                     <input type="text" placeholder="请输入网站" value={website} onChange={handleWebsiteChange}/>
                     <input type="text" placeholder="请输入名称" value={name} onChange={handleNameChange}/>
                     <div>
-                        <button onClick={handleConfirm}>确认</button>
-                        <button onClick={handleCancel}>取消</button>
+                        <button onClick={handleConfirm}>添加网站</button>
+                        <button onClick={handleCancel}>取消添加</button>
                     </div>
 
                 </div>
