@@ -56,8 +56,8 @@ function Picker(props: PickerProps) {
 
     return (
         <div className='fixed inset-0'>
-            <div className="md:w-3/5 w-4/5 absolute bottom-5 translate-x-1/2 right-1/2">
-                <div className='backdrop-blur p-5 rounded-md color-picker' style={{
+            <div className="md:w-3/5 w-4/5 absolute bottom-20 translate-x-1/2 right-1/2">
+                <div className='backdrop-blur p-5 rounded-3xl color-picker bg-black/20' style={{
                     animation: 'fade-in 180ms'
                 }} ref={containerRef}>
                     <div className="grid grid-cols-2 items-center py-1">
@@ -66,57 +66,60 @@ function Picker(props: PickerProps) {
                         </p>
                         <p className="text-right">
                             <label>
-                                原生调色板
+                                <span className='mr-3'>原生调色板</span>
                                 <input type='color' value={hex} onChange={onColorChange}/>
                             </label>
                         </p>
                     </div>
                     <div className="color-bar color-bar0"></div>
-                    <div>
-                        <label>
-                            H（色调）
-                            <input type='range' className='w-full' min={0} max={360} value={hsl.h}
-                                   onChange={(event) => {
-                                       const v = parseInt(event.target.value, 10)
-                                       setHsl({
-                                           h: v,
-                                           s: hsl.s,
-                                           l: hsl.l,
-                                       })
-                                   }}/>
-                        </label>
+                    色相 (H)
+                    <div className="color-bar color-bar1">
+                        <div>
+                            <label>
+                                <input type='range' className='w-full ' min={0} max={360} value={hsl.h}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: v,
+                                               s: hsl.s,
+                                               l: hsl.l,
+                                           })
+                                       }}/>
+                            </label>
+                        </div>
                     </div>
-                    <div className="color-bar color-bar1"></div>
-                    <div>
-                        <label>
-                            S（饱和度）
-                            <input type='range' className='w-full' min={0} max={100} value={hsl.s}
-                                   onChange={(event) => {
-                                       const v = parseInt(event.target.value, 10)
-                                       setHsl({
-                                           h: hsl.h,
-                                           s: v,
-                                           l: hsl.l,
-                                       })
-                                   }}/>
-                        </label>
+                    饱和度 (S)
+                    <div className="color-bar color-bar2">
+                        <div>
+                            <label>
+                                <input type='range' className='w-full' min={0} max={100} value={hsl.s}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: hsl.h,
+                                               s: v,
+                                               l: hsl.l,
+                                           })
+                                       }}/>
+                            </label>
+                        </div>
                     </div>
-                    <div className="color-bar color-bar2"></div>
-                    <div>
-                        <label>
-                            L（亮度）
-                            <input type='range' className='w-full' min={0} max={100} value={hsl.l}
-                                   onChange={(event) => {
-                                       const v = parseInt(event.target.value, 10)
-                                       setHsl({
-                                           h: hsl.h,
-                                           s: hsl.s,
-                                           l: v,
-                                       })
-                                   }}/>
-                        </label>
+                    明度 (L)
+                    <div className="color-bar color-bar3">
+                        <div>
+                            <label>
+                                <input type='range' className='w-full' min={0} max={100} value={hsl.l}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: hsl.h,
+                                               s: hsl.s,
+                                               l: v,
+                                           })
+                                       }}/>
+                            </label>
+                        </div>
                     </div>
-                    <div className="color-bar color-bar3"></div>
                 </div>
             </div>
         </div>
