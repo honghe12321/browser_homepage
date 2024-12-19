@@ -20,16 +20,14 @@ function Picker(props: PickerProps) {
 
         const color = localStorage.getItem('themeColor')
 
-        if (color) {
-            const [h, s, l] =  hexToHsl(color)
-            return {h, s, l}
-        }
+        const [h, s, l] = hexToHsl(color ? color : '#43f1db')
+        return {h, s, l}
 
-        return {
+        /* return {
             h: 50,
             s: 60,
             l: 50,
-        }
+        } */
     })
 
     useEffect(() => {
