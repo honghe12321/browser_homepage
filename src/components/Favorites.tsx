@@ -88,12 +88,12 @@ const Favorites = () => {
 
             </div>
             {(
-                <div className={`addItemFrom ${isShowAdd ? 'visible' : 'hidden'}`}>
+                <div className={`addItemFrom ${isShowAdd ? 'visible_animation' : 'hidden_animation'}`}>
                     <input type="text" placeholder="请输入网站" value={website} onChange={handleWebsiteChange}/>
                     <input type="text" placeholder="请输入名称" value={name} onChange={handleNameChange}/>
                     <div>
-                        <button onClick={handleConfirm}>添加网站</button>
-                        <button onClick={handleCancel}>取消添加</button>
+                        <button onClick={handleConfirm}>添加</button>
+                        <button onClick={handleCancel}>取消</button>
                     </div>
 
                 </div>

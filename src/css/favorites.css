@@ -195,13 +195,15 @@
     z-index: 1000;
     margin: auto;
     border-radius: 1rem;
-    background-color: #fff;
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
     top: 50%;
     left: 50%;
 }
 
 .addItemFrom:hover {
+    backdrop-filter: blur(40px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -218,10 +220,11 @@
     margin-bottom: 1rem;
     padding: 1rem;
     border: 1px solid #ccc;
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 0.7rem;
     font-size: 1rem;
     box-sizing: border-box;
-    background-color: #f8f8f8;
     transition: border-color 0.3s ease;
 }
 
@@ -234,22 +237,21 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
-    background-color: var(--primary);
-    color: white;
+    background-color: rgba(var(--colorRgb), 0.8);
+    color: #ffffff;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.hidden {
+.hidden_animation {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease,backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }
 
-.visible {
+.visible_animation {
     opacity: 1;
     transform: translateY(1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease,backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }

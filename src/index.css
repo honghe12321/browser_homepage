@@ -4,7 +4,8 @@
 
 
 :root {
-    --primary: #33ffee;
+    --primary: '#1976d2';
+    --colorRgb: rgb(255, 0, 0);
 }
 
 .text-primary {

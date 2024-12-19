@@ -15,7 +15,7 @@ export const Home = () => {
     return (
         <div>
             <Background/>
-            <div className={clsx(immerse ? 'gaussian-blur mt-0' : 'mt-32 sm:mt-40 lg:mt-60')}> {/*加 背景模糊*/}
+            <div className={clsx(immerse ? 'gaussian-blur mt-0' : '')}> {/*加 背景模糊*/}
                 <div id={clsx(immerse ? 'main-container-full' : 'main-container')}> {/*加 上边距*/}
                     <div className='my-0 mx-auto'>
                         <Clock/>

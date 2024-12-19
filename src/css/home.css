@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 10vh;
 }
 
 #main-container-full {
@@ -55,21 +56,21 @@ body {
     background: rgba(36, 209, 246, 0.55); /* 滑块hover背景色 */
 }
 
-/*@media (min-width: 640px) {*/
-/*    !* 小型设备及以上 *!*/
-/*    #main-container{*/
-/*        padding-top: 8rem;*/
-/*    }*/
+@media (min-width: 640px) {
+    /* 小型设备及以上 */
+    #main-container{
+        padding-top: 13vh;
+    }
 
 
-/*}*/
+}
 
-/*@media (min-width: 1024px) {*/
-/*    !* 大型设备及以上 *!*/
-/*    #main-container{*/
-/*        padding-top: 10rem;*/
-/*    }*/
-
+@media (min-width: 1024px) {
+    /* 大型设备及以上 */
+    #main-container {
+        padding-top: 15vh;
+    }
+}
 
 /*}*/
 @media (prefers-color-scheme: dark) {
