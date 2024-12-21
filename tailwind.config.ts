@@ -6,6 +6,9 @@ const config: Config = {
         './index.html',
     ],
     theme: {
+        colors: {
+            primary: 'hsl(var(--accent))',
+        },
         extend: {},
     },
     plugins: [],

@@ -1,10 +1,4 @@
-interface RgbColor {
-    r: number
-    g: number
-    b: number
-}
-
-function hexToRgb(color: string): RgbColor {
+function hexToRgb(color: string): RGBColor {
     let hex = color.replace('#', '')
 
     if (hex.length === 3) {

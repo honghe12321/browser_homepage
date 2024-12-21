@@ -48,12 +48,13 @@
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    background-color: rgba(0, 255, 252, 0.29);
+    /*background-color: rgba(0, 255, 252, 0.29);*/
+    background-color: hsl(var(--accent) / 60%);
 }
 
 .button:hover,
 .button:active {
-    background-color: #1180f5;
+    background-color: var(--primary);
     color: #000000;
 }
 

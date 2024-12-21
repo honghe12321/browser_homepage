@@ -2,32 +2,18 @@ import {ChangeEvent, useEffect, useRef, useState} from 'react'
 import ReactDOM from 'react-dom'
 import {hexToHsl, hslToHex} from '../libs/color'
 import '../css/color-picker.css'
-
-interface HslColor {
-    h: number
-    s: number
-    l: number
-}
+import {jotaiStore} from '../providers/store'
+import {themeColorAtom} from '../atoms/themeColor'
 
 interface PickerProps {
-    onChange: (color: string) => void
+    onChange: (color: HSLColor) => void
 }
 
 function Picker(props: PickerProps) {
     const containerRef = useRef<HTMLDivElement>(null)
     const [hex, setHex] = useState<string>()
-    const [hsl, setHsl] = useState<HslColor>(() => {
-
-        const color = localStorage.getItem('themeColor')
-
-        const [h, s, l] = hexToHsl(color ? color : '#43f1db')
-        return {h, s, l}
-
-        /* return {
-            h: 50,
-            s: 60,
-            l: 50,
-        } */
+    const [hsl, setHsl] = useState<HSLColor>(() => {
+        return jotaiStore.get(themeColorAtom);
     })
 
     useEffect(() => {
@@ -38,17 +24,14 @@ function Picker(props: PickerProps) {
             container.style.setProperty('--l', `${hsl.l}%`)
         }
 
-        requestAnimationFrame(() => {
-            const hex = hslToHex(hsl.h, hsl.s, hsl.l)
-            setHex(hex)
-            props.onChange(hex)
-        })
+        setHex(hslToHex(hsl.h, hsl.s, hsl.l))
 
+        props.onChange(hsl)
     }, [hsl])
 
     const onColorChange = (event: ChangeEvent<HTMLInputElement>) => {
         const hex = event.target.value
-        const [h, s, l] =  hexToHsl(hex)
+        const [h, s, l] = hexToHsl(hex)
         setHsl({h, s, l})
     }
 
@@ -63,9 +46,9 @@ function Picker(props: PickerProps) {
                             <span>主题色预览(点击预览条可唤起原生取色器)</span>
                         </div>
                         <div className="color-bar color-bar0">
-                                <label>
-                                    <input className='w-full h-full opacity-0' type='color' value={hex} onChange={onColorChange}/>
-                                </label>
+                            <label>
+                                <input className='w-full h-full opacity-0' type='color' value={hex} onChange={onColorChange}/>
+                            </label>
                         </div>
                     </div>
                     <div>
@@ -120,7 +103,7 @@ function Picker(props: PickerProps) {
 
 interface ColorPickerProps {
     show: boolean
-    onChange: (color: string) => void
+    onChange: (color: HSLColor) => void
 }
 
 function ColorPicker(props: ColorPickerProps) {

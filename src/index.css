@@ -2,17 +2,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
-:root {
-    --primary: #43f1dbb3;
-    --colorRgb: rgb(255, 0, 0);
+@property --primary {
+    syntax: "<color>";
+    initial-value: #49DFBE;
+    inherits: true;
 }
 
-.text-primary {
-    color: var(--primary);
+@layer base {
+    :root {
+        --accent-h: 172;
+        --accent-s: 86%;
+        --accent-l: 60%;
+        --accent: var(--accent-h) var(--accent-s) var(--accent-l);
+        --primary: hsl(var(--accent) / 70%);
+    }
 }
 
-.bg-primary {
-    background-color: var(--primary);
-}
+/*.text-primary {*/
+/*    color: var(--primary);*/
+/*}*/
 
+/*.bg-primary {*/
+/*    background-color: var(--primary);*/
+/*}*/

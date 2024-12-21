@@ -14,11 +14,11 @@ export function Tool() {
         <div className={clsx('fixed bottom-0 left-1/2 z-10 transform -translate-x-1/2 transition-all duration-500 ease-in-out', showSettings ? 'translate-y-0' : 'translate-y-16')}>
             <div className='flex justify-center w-full'>
                 {/*设置按钮*/}
-                <div className='inline-block px-2 pt-0.5 bg-white/20 backdrop-blur rounded-t-lg'
+                <div className='inline-block px-2 pt-0.5 bg-white/20 backdrop-blur rounded-t-lg text-white hover:text-primary'
                      onClick={() => setShowSettings(prev => !prev)}
                 >
-                    {showSettings ? <BsChevronDown size='20' color='white'/>
-                        : <BsChevronUp size='20' color='white'/>}
+                    {showSettings ? <BsChevronDown size='20'/>
+                        : <BsChevronUp size='20'/>}
                 </div>
             </div>
             <div className='p-3 bg-white/20 backdrop-blur rounded-2xl flex gap-2'>
