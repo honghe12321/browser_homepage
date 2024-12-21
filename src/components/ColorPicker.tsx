@@ -71,51 +71,45 @@ function Picker(props: PickerProps) {
                     <div>
                         色相 (H)
                         <div className="color-bar color-bar1">
-                            <div>
-                                <label>
-                                    <input type='range' className='w-full ' min={0} max={360} value={hsl.h}
-                                           onChange={(event) => {
-                                               const v = parseInt(event.target.value, 10)
-                                               setHsl({
-                                                   h: v,
-                                                   s: hsl.s,
-                                                   l: hsl.l,
-                                               })
-                                           }}/>
-                                </label>
-                            </div>
+                            <label>
+                                <input type='range' className='w-full ' min={0} max={360} value={hsl.h}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: v,
+                                               s: hsl.s,
+                                               l: hsl.l,
+                                           })
+                                       }}/>
+                            </label>
                         </div>
                         饱和度 (S)
                         <div className="color-bar color-bar2">
-                            <div>
-                                <label>
-                                    <input type='range' className='w-full' min={0} max={100} value={hsl.s}
-                                           onChange={(event) => {
-                                               const v = parseInt(event.target.value, 10)
-                                               setHsl({
-                                                   h: hsl.h,
-                                                   s: v,
-                                                   l: hsl.l,
-                                               })
-                                           }}/>
-                                </label>
-                            </div>
+                            <label>
+                                <input type='range' className='w-full' min={0} max={100} value={hsl.s}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: hsl.h,
+                                               s: v,
+                                               l: hsl.l,
+                                           })
+                                       }}/>
+                            </label>
                         </div>
                         明度 (L)
                         <div className="color-bar color-bar3">
-                            <div>
-                                <label>
-                                    <input type='range' className='w-full' min={0} max={100} value={hsl.l}
-                                           onChange={(event) => {
-                                               const v = parseInt(event.target.value, 10)
-                                               setHsl({
-                                                   h: hsl.h,
-                                                   s: hsl.s,
-                                                   l: v,
-                                               })
-                                           }}/>
-                                </label>
-                            </div>
+                            <label>
+                                <input type='range' className='w-full' min={0} max={100} value={hsl.l}
+                                       onChange={(event) => {
+                                           const v = parseInt(event.target.value, 10)
+                                           setHsl({
+                                               h: hsl.h,
+                                               s: hsl.s,
+                                               l: v,
+                                           })
+                                       }}/>
+                            </label>
                         </div>
                     </div>
                 </div>

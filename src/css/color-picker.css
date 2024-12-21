@@ -137,20 +137,23 @@
             hsl(var(--h), var(--s), 100%)
     );
 }
+
 /*横条样式*/
 input[type=range] {
-    -webkit-appearance: none;/*清除系统默认样式*/
+    -webkit-appearance: none; /*清除系统默认样式*/
     width: 100%;
-    height: 0;/*横条的高度*/
+    height: 0; /*横条的高度*/
 }
+
 /*拖动块的样式*/
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;/*清除系统默认样式*/
-    height: 2rem;/*拖动块高度*/
-    width: 26px;/*拖动块宽度*/
-    background: #fff;/*拖动块背景*/
-    border-radius: 0.5rem; /*圆角*/
-    border: solid 1px rgba(0, 0, 0, 0.73); /*设置边框*/
+    -webkit-appearance: none; /*清除系统默认样式*/
+    height: 2rem; /*拖动块高度*/
+    width: 26px; /*拖动块宽度*/
+    background: #fff; /*拖动块背景*/
+    border-radius: 0.6rem; /*圆角*/
+    border: solid 1px #000000BA; /*设置边框*/
+    box-shadow: 0 0 20px 2px hsl(var(--h), var(--s), 50%);
     transform: scale(0.9);
 }
 
