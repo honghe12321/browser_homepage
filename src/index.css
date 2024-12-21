@@ -8,6 +8,24 @@
     inherits: true;
 }
 
+@property --accent-h {
+    syntax: "<angle>";
+    initial-value: 172;
+    inherits: true;
+}
+
+@property --accent-s {
+    syntax: "<percentage>";
+    initial-value: 172;
+    inherits: true;
+}
+
+@property --accent-l {
+    syntax: "<percentage>";
+    initial-value: 60%;
+    inherits: true;
+}
+
 @layer base {
     :root {
         --accent-h: 172;
