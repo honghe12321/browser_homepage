@@ -7,6 +7,7 @@ const config: Config = {
     ],
     theme: {
         colors: {
+            white: '#FFFFFF',
             primary: 'hsl(var(--accent))',
         },
         extend: {},
