@@ -27,12 +27,12 @@ jotaiStore.sub(themeColorAtom, () => {
     const color: HSLColor = jotaiStore.get(themeColorAtom);
 
     document.documentElement.style.setProperty('--accent-h', `${color.h}`);
-    document.documentElement.style.setProperty('--accent-s', `${color.s}`);
-    document.documentElement.style.setProperty('--accent-l', `${color.l}`);
+    document.documentElement.style.setProperty('--accent-s', `${color.s}%`);
+    document.documentElement.style.setProperty('--accent-l', `${color.l}%`);
 
     localStorage.setItem('themeColor', JSON.stringify(color));
 })
 
 export {
-    themeColorAtom,
+    themeColorAtom, defaultThemeColor
 }

@@ -1,17 +1,9 @@
-import {useEffect, useState} from 'react';
-import {useAtomValue, useSetAtom} from 'jotai';
+import {useEffect, useState} from 'react'
+import {useAtomValue, useSetAtom} from 'jotai'
 import {BsFlower3} from 'react-icons/bs'
 import {themeColorAtom} from '../atoms/themeColor'
 import ColorPicker from './ColorPicker'
-import {toolUnfoldAtom} from "../atoms/tools";
-
-// function rgbToStr(color: { r: number; g: number; b: number; }) {
-//     let r = color.r
-//     let g = color.g
-//     let b = color.b
-//
-//     return `rgb(${r}, ${g}, ${b})`;
-// }
+import {toolUnfoldAtom} from '../atoms/tools'
 
 export const Theme = () => {
     const [show, setShow] = useState<boolean>(false)
