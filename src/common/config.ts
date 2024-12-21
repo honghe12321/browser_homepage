@@ -1,4 +1,4 @@
-const defaultBackgroundImage: string = 'https://shp.qpic.cn/collector/3201719830/cc400aa6-7141-4ac5-83c1-39b2cbb01adc/0'
+const defaultBackgroundImage: string = 'https://assets.truimo.com/images/p241022/2f8ef7077540980aaa272e9f2b17e10a.png'
 
 export {
     defaultBackgroundImage
