@@ -16,6 +16,17 @@ const hashCode = (str: string) => {
 
 const NameAvatar = ({name, src}: NameAvatarProps) => {
     const [imageError, setImageError] = useState<boolean>(false)
+
+    //正则表达找到域名
+    const regex = /https?:\/\/([^/]+)/;
+    const match = src.match(regex);
+    if (match && match[1]) {
+        src=match[1]
+    }else {
+        src=src.split("\/")[0];
+    }
+
+
     const imageUrl = `https://favicon.im/${src}?larger=true`
 
     if (imageError) {

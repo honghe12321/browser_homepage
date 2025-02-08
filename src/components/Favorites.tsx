@@ -43,6 +43,10 @@ const Favorites = () => {
     const [isShowAdd, setIsShowAdd] = useState(false); // 控制表单显示
 
     const linkTo = (link: string) => {
+        //删除://前面的内容
+        link = link.replace(/.*?:\/\//, '');
+
+
         window.open("//" + link)
     }
     const handleWebsiteChange = (event: ChangeEvent<HTMLInputElement>) => {
