@@ -76,7 +76,7 @@ const Favorites = () => {
         <div className='box'>
             {favoritesList.map(item =>
                 (
-                    <div className={'list'} key={item.id} onClick={() => linkTo(item.href)}>
+                    <div className={'list'} key={item.id} onClick={() => linkTo(item.href)} title={item.href}>
                         <div className='del' onClick={(e) => removeItem(e, item.id)}><span>×</span></div>
                         {/*<img src={`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${item.href}&size=256`} alt="图标呢？"/>*/}
                         {/*<img src={`https://favicon.im/${item.href}?larger=true`} alt=""/>*/}
