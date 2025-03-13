@@ -7,10 +7,14 @@ const Search = () => {
 
     const search = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-
+        if (value == 'shaoyang'){
+            window.open('/love')
+        }
         if (value !== '') {
             window.open('https://www.baidu.com/s?wd=' + value)
         }
+
+
     }
 
     function onValueChange(e: ChangeEvent<HTMLInputElement>) {

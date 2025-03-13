@@ -2,15 +2,19 @@ import type {Config} from 'tailwindcss'
 
 const config: Config = {
     content: [
-        './src/**/*.{js,ts,jsx,tsx}',
-        './index.html',
+        './src/**/*.html',
+        './src/**/*.js',
+        './src/**/*.jsx',
+        './src/**/*.ts',
+        './src/**/*.tsx',
     ],
     theme: {
-        colors: {
-            white: '#FFFFFF',
-            primary: 'hsl(var(--accent))',
+        extend: {
+            colors: {
+                white: '#FFFFFF',
+                primary: 'hsl(var(--accent))',
+            },
         },
-        extend: {},
     },
     plugins: [],
 };
