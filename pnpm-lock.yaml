@@ -24,26 +24,26 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-grid-layout:
-        specifier: ^1.5.0
+        specifier: ^1.5.1
         version: 1.5.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-icons:
-        specifier: ^5.4.0
+        specifier: ^5.5.0
         version: 5.5.0(react@19.0.0)
       react-router:
-        specifier: ^7.2.0
+        specifier: ^7.6.2
         version: 7.6.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       web-vitals:
         specifier: ^4.2.4
         version: 4.2.4
     devDependencies:
       '@eslint/js':
-        specifier: ^9.17.0
+        specifier: ^9.28.0
         version: 9.28.0
       '@types/react':
-        specifier: ^19.0.2
+        specifier: ^19.1.6
         version: 19.1.6
       '@types/react-dom':
-        specifier: ^19.0.2
+        specifier: ^19.1.5
         version: 19.1.5(@types/react@19.1.6)
       '@vitejs/plugin-react':
         specifier: 4.3.4
