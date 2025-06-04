@@ -28,16 +28,14 @@ const BackgroundChanger = () => {
     }
 
     return (
-        <>
-            <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
-                <label>
+        <div className='inline-block p-2 bg-black/20 backdrop-blur rounded-xl'>
+            <label>
                 <span>
                     <BsCardImage size='20' color='white'/>
                 </span>
-                    <input className='hidden' type="file" accept="image/*" onChange={handleImageChange}/>
-                </label>
-            </div>
-        </>
+                <input className='hidden' type="file" accept="image/*" onChange={handleImageChange}/>
+            </label>
+        </div>
     );
 };
 
