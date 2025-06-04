@@ -20,12 +20,10 @@ export const Home = () => {
                     <div className='my-0 mx-auto'>
                         <Clock/>
                     </div>
-                    {!immerse && (
-                        <div className='mt-8'>
-                            <Search/>
-                            <Favorites/>
-                        </div>
-                    )}
+                    <div className={clsx('mt-8', immerse ? 'hidden' : '')}>
+                        <Search/>
+                        <Favorites/>
+                    </div>
                 </div>
             </div>
             <Tool/>
