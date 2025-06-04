@@ -1,4 +1,5 @@
-import {createContext, PropsWithChildren, useContext, useEffect, useState} from 'react'
+import type {PropsWithChildren} from 'react'
+import {createContext, useContext, useEffect, useState} from 'react'
 import _ from 'lodash'
 
 interface Favorites {
@@ -29,7 +30,6 @@ export const FavoritesProvider = (props: PropsWithChildren) => {
     const [list, setList] = useState<Array<Favorites>>(defaultContext.list)
 
     useEffect(() => {
-        console.log("favorites list init")
         const favorites = window.localStorage.getItem('favorites')
         if (favorites) {
             const data = JSON.parse(favorites), list: Array<Favorites> = []
@@ -49,7 +49,6 @@ export const FavoritesProvider = (props: PropsWithChildren) => {
     }, [])
 
     useEffect(() => {
-        console.log("favorites list", list)
         const data = JSON.stringify(list)
         if (list.length > 0) {
             window.localStorage.setItem('favorites', data)
@@ -57,13 +56,11 @@ export const FavoritesProvider = (props: PropsWithChildren) => {
     }, [list])
 
     const remove = (id: string) => {
-        console.log('favorites remove', id)
         const saved = list.filter(it => it.id !== id)
         setList(saved)
     }
 
     const setItem = (item: Favorites) => {
-        console.log("favorites set", item)
         const saved = _.concat(list, item)
         setList(saved)
     }

@@ -1,8 +1,8 @@
-import {BsCardImage} from 'react-icons/bs'
+import type {ChangeEvent} from 'react'
 import {useSetAtom} from 'jotai'
+import {BsCardImage} from 'react-icons/bs'
 import {b64Blob} from '../libs/base64'
 import {backgroundImageAtom} from '../atoms/background'
-import type {ChangeEvent} from 'react'
 import '../css/home.css'
 
 const BackgroundChanger = () => {

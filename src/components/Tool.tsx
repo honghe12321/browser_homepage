@@ -1,10 +1,10 @@
-import {BsChevronUp,BsChevronDown} from 'react-icons/bs'
 import clsx from 'clsx'
+import {useAtom} from 'jotai'
+import {BsChevronUp,BsChevronDown} from 'react-icons/bs'
 import BackgroundChanger from './BackgroundChanger'
 import FullscreenComponent from './FullscreenComponent'
 import {Theme} from './ChangerThemeColor'
 import {toolUnfoldAtom} from '../atoms/tools'
-import {useAtom} from 'jotai'
 
 export function Tool() {
     // 控制设置面板显示或隐藏
