@@ -1,7 +1,7 @@
 .box {
     margin: auto;
     width: 24rem;
-    height: 10rem;
+    /*height: 10rem;*/
     /*background: rgba(0, 0, 0, 0.13);*/
     /*backdrop-filter: blur(20px);*/
     border-radius: 25px;
@@ -103,7 +103,7 @@
     /* 小型设备及以上 */
     .box {
         width: 40rem;
-        height: 10rem;
+        /*height: 10rem;*/
     }
 
     .list {
@@ -147,7 +147,7 @@
     .box {
         margin: 30px auto auto;
         width: 50rem;
-        height: 10rem;
+        /*height: 10rem;*/
     }
 
     .list {
