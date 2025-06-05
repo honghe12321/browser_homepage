@@ -76,7 +76,7 @@ const linkTo = (link: string) => {
     //删除://前面的内容
     link = link.replace(/.*?:\/\//, '')
 
-    window.open("//" + link)
+    window.open('//' + link)
 }
 
 const FavoritesList = () => {
@@ -92,14 +92,13 @@ const FavoritesItem = ({ item }: {
 }) => {
     const { remove } = useFavorites()
 
-    const removeItem = () => {
+    const removeItem = (ev: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
+        ev.stopPropagation()
         remove(item.id)
     }
 
-    const handleClick = (ev: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
-        if (ev.target === ev.currentTarget) {
-            linkTo(item.href)
-        }
+    const handleClick = () => {
+        linkTo(item.href)
     }
 
     return (
