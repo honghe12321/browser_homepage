@@ -1,24 +1,26 @@
+/* 主容器 */
 .box {
     margin: auto;
-    width: 24rem;
-    /*height: 10rem;*/
-    /*background: rgba(0, 0, 0, 0.13);*/
-    /*backdrop-filter: blur(20px);*/
+    padding: 1rem;
+    max-width: 25rem;
+    min-width: 25rem;
     border-radius: 25px;
-    display: flex;
-    flex-wrap: wrap; /* 允许图标换行 */
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 默认小屏幕：3列 */
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: start;
 }
 
+/* 每个图标项 */
 .list {
     display: flex;
-    position: relative;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 6rem;
-    aspect-ratio: 1/1;
-    margin: 2rem 1rem 1rem 1rem;
+    width: 100%;
+    max-width: 8rem;
+    aspect-ratio: 1 / 1;
     list-style: none;
     cursor: pointer;
     user-select: none;
@@ -26,16 +28,17 @@
     background: rgba(255, 255, 255, 0.2);
     border-radius: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 12px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+    transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .list:hover {
     transform: translateY(-0.4rem);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(50px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
-.list:hover > div {
+.list:hover > .del {
     opacity: 1;
 }
 
@@ -43,38 +46,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem 0 0.7rem;
 }
 
-.imgIcon > div {
-    font-size: 1.5rem;
-    width: 2.5rem;
-    aspect-ratio: 1/1;
-    border-radius: 0.7rem;
-}
-
+.imgIcon > div,
 .imgIcon > img {
     width: 2.5rem;
+    aspect-ratio: 1 / 1;
     border-radius: 0.7rem;
+    font-size: 1.5rem;
 }
 
 .list span {
-    margin: 0 0 0.5rem 0;
+    margin-bottom: 0.5rem;
     font-size: 0.9rem;
     cursor: default;
 }
 
+/* 最后一个：添加按钮样式 */
 .list:last-child span {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: default;
-    user-select: none;
     font-family: "华文中宋", serif;
     transition: color 0.5s;
     font-size: 3rem;
     color: #030303;
-
+    user-select: none;
+    cursor: default;
 }
 
 .list:last-child:hover span {
@@ -83,122 +82,37 @@
 
 .del {
     position: absolute;
-    justify-content: center;
-    align-items: center;
-    cursor: default;
-    user-select: none;
-    color: #ffffff;
     top: 3px;
     right: 8px;
-    font-family: "华文中宋", serif;
-    opacity: 0;
     font-size: 1rem;
+    font-family: "华文中宋", serif;
+    color: #ffffff;
+    opacity: 0;
+    user-select: none;
+    cursor: default;
+    transition: opacity 0.3s ease;
 }
 
 .list div span:hover {
     color: var(--primary);
 }
 
-@media (min-width: 640px) {
-    /* 小型设备及以上 */
-    .box {
-        width: 40rem;
-        /*height: 10rem;*/
-    }
-
-    .list {
-
-        width: 8rem;
-    }
-
-
-    .imgIcon {
-        margin: 0.5rem 0 0.7rem 0;
-    }
-
-    .imgIcon > div {
-        width: 3rem;
-    }
-
-    .imgIcon > img {
-        width: 3rem;
-    }
-
-    .list span {
-        margin: 0 0 0.5rem 0;
-        font-size: 1rem;
-        cursor: default;
-    }
-
-    .list:last-child span {
-        font-size: 4rem;
-    }
-
-
-    .del {
-        top: 0;
-        right: 8px;
-        font-size: 1.5rem;
-    }
-
-}
-
-@media (min-width: 1024px) {
-    .box {
-        margin: 30px auto auto;
-        width: 50rem;
-        /*height: 10rem;*/
-    }
-
-    .list {
-        width: 8rem;
-    }
-
-    .imgIcon {
-        margin: 0.5rem 0 1rem 0;
-    }
-
-    .imgIcon > div {
-        width: 3.5rem;
-    }
-
-    .imgIcon > img {
-        width: 3.5rem;
-    }
-
-    .list span {
-        margin: 0 0 0.5rem 0;
-        font-size: 1rem;
-        cursor: default;
-    }
-
-    .list:last-child span {
-        font-size: 5rem;
-    }
-
-
-    .del {
-        top: 0;
-        right: 8px;
-        font-size: 1.5rem;
-    }
-
-}
-
+/* 添加表单弹窗 */
 .addItemFrom {
-    display: flex;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
     z-index: 1000;
-    margin: auto;
     border-radius: 1rem;
     backdrop-filter: blur(7px);
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-    top: 50%;
-    left: 50%;
+    transition: backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }
 
 .addItemFrom:hover {
@@ -208,7 +122,6 @@
 
 .addItemFrom div {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -218,13 +131,13 @@
     flex-grow: 1;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #ccc;
-    backdrop-filter: blur(7px);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 0.7rem;
     font-size: 1rem;
-    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(7px);
     transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .addItemFrom input:focus {
@@ -236,12 +149,12 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
-    background-color: rgba(var(--colorRgb), 0.8);
-    color: #ffffff;
+    color: #fff;
     font-size: 1rem;
     cursor: pointer;
 }
 
+/* 弹窗动画 */
 .hidden_animation {
     opacity: 0;
     pointer-events: none;
@@ -254,3 +167,48 @@
     transform: translateY(1rem) translate(-50%, -50%);
     transition: transform 0.3s ease, opacity 0.3s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }
+
+/* 中屏幕（≥640px）：4列，字体与图标略大 */
+@media (min-width: 640px) {
+    .box {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 40rem;
+    }
+
+    .imgIcon > div,
+    .imgIcon > img {
+        width: 3rem;
+    }
+
+    .list span {
+        font-size: 1rem;
+    }
+
+    .list:last-child span {
+        font-size: 4rem;
+    }
+
+    .del {
+        font-size: 1.5rem;
+        top: 0;
+    }
+}
+
+/* 大屏幕（≥1024px）：5列 */
+@media (min-width: 1024px) {
+    .box {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 50rem;
+        margin-top: 30px;
+    }
+
+    .imgIcon > div,
+    .imgIcon > img {
+        width: 3.5rem;
+    }
+
+    .list:last-child span {
+        font-size: 5rem;
+    }
+}
+

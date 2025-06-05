@@ -12,6 +12,7 @@ interface FavoritesProviderContext {
     list: Array<Favorites>
     remove: (id: string) => void
     setItem: (item: Favorites) => void
+    setAllItem: (item: Favorites[]) => void
 }
 
 const defaultContext: FavoritesProviderContext = {
@@ -20,6 +21,9 @@ const defaultContext: FavoritesProviderContext = {
         console.log('favorites remove', id)
     },
     setItem: (item: Favorites) => {
+        console.log('favorites setItem', item)
+    },
+    setAllItem: (item: Favorites[]) => {
         console.log('favorites setItem', item)
     }
 }
@@ -64,12 +68,16 @@ export const FavoritesProvider = (props: PropsWithChildren) => {
         const saved = _.concat(list, item)
         setList(saved)
     }
+    const setAllItem = (list: Favorites[]) => {
+        setList(list)
+    }
 
     return (
         <FavoritesContext value={{
             list: list,
             remove: remove,
             setItem: setItem,
+            setAllItem: setAllItem,
         }}>
             {props.children}
         </FavoritesContext>
