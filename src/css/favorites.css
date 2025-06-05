@@ -20,7 +20,7 @@
     aspect-ratio: 1/1;
     margin: 2rem 1rem 1rem 1rem;
     list-style: none;
-    cursor: default;
+    cursor: pointer;
     user-select: none;
     backdrop-filter: blur(7px);
     background: rgba(255, 255, 255, 0.2);
@@ -33,7 +33,6 @@
     transform: translateY(-0.4rem);
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(50px);
-
 }
 
 .list:hover > div {
@@ -247,11 +246,11 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(-1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease,backdrop-filter 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }
 
 .visible_animation {
     opacity: 1;
     transform: translateY(1rem) translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease,backdrop-filter 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;
 }

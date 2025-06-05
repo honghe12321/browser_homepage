@@ -1,5 +1,5 @@
-import {useState} from 'react'
 import type {ChangeEvent, FormEvent} from 'react'
+import {useState} from 'react'
 import styles from '../css/search.module.css'
 
 const Search = () => {
@@ -7,14 +7,12 @@ const Search = () => {
 
     const search = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (value == 'shaoyang'){
+        if (value == 'shaoyang') {
             window.open('/love')
         }
         if (value !== '') {
             window.open('https://www.baidu.com/s?wd=' + value)
         }
-
-
     }
 
     function onValueChange(e: ChangeEvent<HTMLInputElement>) {
