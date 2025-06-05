@@ -7,20 +7,24 @@ const SearchContainer = styled.div`
     margin: 0 auto 0 auto;
     width: 21rem;
     height: 3.2rem;
-    border-radius: 3rem;
+
+    @media (min-width: 640px) {
+        width: 26rem;
+    }
+`
+
+const SearchInner = styled.div`
     background-color: rgba(255, 255, 255, 0.22);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 3rem;
+    overflow: hidden;
 
     &:hover {
         transform: translateY(-0.2rem);
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 15px 40px rgba(0, 0, 0, 0.35);
         backdrop-filter: blur(50px);
-    }
-
-    @media (min-width: 640px) {
-        width: 26rem;
     }
 `
 
@@ -87,17 +91,20 @@ const Search = () => {
 
     return (
         <SearchContainer>
-            <form onSubmit={search}>
-                <SearchFormContainer>
-                    <label>
-                        <SearchInput type='search' onChange={onValueChange} maxLength={64}
-                                     placeholder='输入搜索词' autoComplete='off' name='word' autoCorrect='off'/>
-                    </label>
-                    <SearchButton type='submit'>搜索</SearchButton>
-                </SearchFormContainer>
-            </form>
+            <SearchInner>
+                <form onSubmit={search}>
+                    <SearchFormContainer>
+                        <label>
+                            <SearchInput type='search' onChange={onValueChange} maxLength={64}
+                                         placeholder='输入搜索词' autoComplete='off' name='word' autoCorrect='off'/>
+                        </label>
+                        <SearchButton type='submit'>搜索</SearchButton>
+                    </SearchFormContainer>
+                </form>
+            </SearchInner>
         </SearchContainer>
     )
 }
+
 
 export default Search;
