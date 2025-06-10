@@ -254,7 +254,7 @@ const Heart: React.FC = () => {
             context.fillText("", canvas.width / 2 - 105, canvas.height / 2 - 250);
             context.fillText(" ", canvas.width / 2 - 200, canvas.height / 2 + 250);
             context.font = "30px Arial";
-            context.fillText("满足你的小愿望吧", canvas.width / 2 - 110, canvas.height / 2 + 300);
+            context.fillText("", canvas.width / 2 - 110, canvas.height / 2 + 300);
         };
 
         const onResize = () => {
