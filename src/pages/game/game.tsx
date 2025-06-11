@@ -22,7 +22,7 @@ const games: GameItem[] = [
     {
         title: "换装小游戏",
         img: "https://imgs.crazygames.com/holographic-trends/20210210062727/holographic-trends-cover?metadata=none&quality=85&width=273&fit=crop",
-        url: "https://www.crazygames.com/embed/holographic-trends",
+        url: "https://www.crazygames.com/embed/mean-girls-graduation-day",
     },
 ];
 
