@@ -15,11 +15,15 @@ const games: GameItem[] = [
         url: "https://www.crazygames.com/embed/doodle-road",
     },
     {
-        title: "Bullet Force",
+        title: "冲冲冲萨沃拉",
         img: "https://imgs.crazygames.com/count-masters-stickman-games_16x9/20250220041115/count-masters-stickman-games_16x9-cover?metadata=none&quality=85&width=273&fit=crop",
         url: "https://www.crazygames.com/embed/count-masters-stickman-games",
     },
-    // 可以继续添加更多游戏
+    {
+        title: "换装小游戏",
+        img: "https://imgs.crazygames.com/holographic-trends/20210210062727/holographic-trends-cover?metadata=none&quality=85&width=273&fit=crop",
+        url: "https://www.crazygames.com/embed/holographic-trends",
+    },
 ];
 
 const Game: React.FC = () => {
