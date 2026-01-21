@@ -73,20 +73,22 @@ const SearchFormContainer = styled.div`
 `
 
 const Search = () => {
-    const [value, setValue] = useState<string>('')
+    const [value, setValue] = useState('')
 
     const search = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (value == 'shaoyang') {
+        const trimmedValue = value.trim()
+        if (!trimmedValue) {
+            return
+        }
+        if (trimmedValue === 'shaoyang') {
             window.open('/love')
         }
-        if (value !== '') {
-            window.open('https://www.baidu.com/s?wd=' + value)
-        }
+        window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(trimmedValue)}`)
     }
 
-    function onValueChange(e: ChangeEvent<HTMLInputElement>) {
-        setValue(e.target.value)
+    const onValueChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value)
     }
 
     return (

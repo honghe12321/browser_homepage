@@ -32,8 +32,8 @@ function getCurrentTime() {
 // const now = new Date();
 // console.log(formatDate(now)); // 输出格式化后的当前时间
 const Clock = () => {
-    const [time, setTime] = useState(getCurrentTime())
-    const immerse: boolean = useAtomValue(immerseAtom)
+    const [time, setTime] = useState(getCurrentTime)
+    const immerse = useAtomValue(immerseAtom)
 
     useEffect(() => {
         const interval = setInterval(() => {

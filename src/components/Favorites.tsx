@@ -29,43 +29,38 @@ const FavoritesAdd = () => {
     const [website, setWebsite] = useState('')
     const [name, setName] = useState('')
 
-    const handleClick = () => {
-        setIsShowAdd(!isShowAdd)
-    }
-
-    const handleWebsiteChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setWebsite(event.target.value)
-    }
-
-    const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value)
+    const toggleAdd = () => {
+        setIsShowAdd(prev => !prev)
     }
 
     const handleConfirm = () => {
-        if (website !== '' && website !== null) {
-            const item = {
-                id: uuidv4(),
-                name: name,
-                href: website,
-            }
-            setItem(item)
-        } else {
+        const trimmedWebsite = website.trim()
+        if (!trimmedWebsite) {
             alert('添加失败:网址为空！')
+            setIsShowAdd(false)
+            return
         }
+        setItem({
+            id: uuidv4(),
+            name: name.trim(),
+            href: trimmedWebsite,
+        })
+        setWebsite('')
+        setName('')
         setIsShowAdd(false)
     }
 
     return (
         <>
             <div className={clsx('addItemFrom', isShowAdd ? 'visible_animation' : 'hidden_animation')}>
-                <input type="text" placeholder="请输入网站" value={website} onChange={handleWebsiteChange}/>
-                <input type="text" placeholder="请输入名称" value={name} onChange={handleNameChange}/>
+                <input type="text" placeholder="请输入网站" value={website} onChange={(event: ChangeEvent<HTMLInputElement>) => setWebsite(event.target.value)}/>
+                <input type="text" placeholder="请输入名称" value={name} onChange={(event: ChangeEvent<HTMLInputElement>) => setName(event.target.value)}/>
                 <div>
                     <button onClick={handleConfirm}>添加</button>
-                    <button onClick={handleClick}>取消</button>
+                    <button onClick={toggleAdd}>取消</button>
                 </div>
             </div>
-            <div className="list" onClick={() => handleClick()}>
+            <div className="list" onClick={toggleAdd}>
                 <span>+</span>
             </div>
         </>
@@ -74,9 +69,9 @@ const FavoritesAdd = () => {
 
 const linkTo = (link: string) => {
     //删除://前面的内容
-    link = link.replace(/.*?:\/\//, '')
+    const normalizedLink = link.replace(/.*?:\/\//, '')
 
-    window.open('//' + link)
+    window.open('//' + normalizedLink)
 }
 
 const FavoritesList = () => {
@@ -102,7 +97,7 @@ const FavoritesItem = ({ item }: {
     }
 
     return (
-        <div className="list" key={item.id} onClick={handleClick} title={item.href}>
+        <div className="list" onClick={handleClick} title={item.href}>
             <div className="del" onClick={removeItem}>
                 <span>×</span>
             </div>
