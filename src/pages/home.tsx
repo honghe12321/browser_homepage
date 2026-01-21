@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import {memo} from 'react'
 import {useAtomValue} from 'jotai'
 import {immerseAtom} from '../atoms/fullscreen'
 import Search from '../components/Search'
@@ -9,14 +10,14 @@ import Background from '../components/Background'
 import '../css/home.css'
 
 
-export const Home = () => {
+export const Home = memo(() => {
     const immerse = useAtomValue(immerseAtom)
 
     return (
-        <div>
+        <main>
             <Background/>
-            <div className={clsx(immerse ? 'gaussian-blur mt-0' : '')}> {/*加 背景模糊*/}
-                <div id={clsx(immerse ? 'main-container-full' : 'main-container')}> {/*加 上边距*/}
+            <div className={clsx(immerse && 'gaussian-blur mt-0')}> {/*加 背景模糊*/}
+                <div id={immerse ? 'main-container-full' : 'main-container'}> {/*加 上边距*/}
                     <div className='my-0 mx-auto'>
                         <Clock/>
                     </div>
@@ -27,6 +28,6 @@ export const Home = () => {
                 </div>
             </div>
             <Tool/>
-        </div>
+        </main>
     )
-}
+})
