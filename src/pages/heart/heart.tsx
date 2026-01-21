@@ -168,7 +168,7 @@ const settings: Settings = {
     },
 };
 
-const Heart: React.FC = () => {
+const RomanticParticles: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -286,4 +286,4 @@ const Heart: React.FC = () => {
     );
 };
 
-export default Heart;
+export default RomanticParticles;
